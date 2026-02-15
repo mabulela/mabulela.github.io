@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure AI Architect: Enterprise Reference Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        .hidden-section {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .active-nav {
+            border-bottom-width: 2px;
+            border-color: #4f46e5;
+            color: #111827;
+        }
+
+        .highlight-action {
+            animation: highlightPulse 2s ease-out;
+        }
+
+        @keyframes highlightPulse {
+            0% {
+                background-color: #e0e7ff;
+                box-shadow: 0 0 0 2px #6366f1;
+            }
+
+            100% {
+                background-color: #ffffff;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center gap-2">
+                        <span class="text-2xl font-bold text-indigo-600">Secure<span class="text-slate-900">AI</span>
+                            Path</span>
+                        <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-0.5 rounded">Reference
+                            Edition v5.0</span>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <button onclick="switchView('curriculum')" id="nav-curriculum"
+                        class="active-nav px-1 pt-1 text-sm font-medium transition-colors">
+                        Curriculum & Roles
+                    </button>
+                    <button onclick="switchView('scenarios')" id="nav-scenarios"
+                        class="border-transparent text-gray-500 hover:text-gray-700 px-1 pt-1 border-b-2 text-sm font-medium transition-colors">
+                        Threat Matrix (ATLAS)
+                    </button>
+                    <button onclick="switchView('frameworks')" id="nav-frameworks"
+                        class="border-transparent text-gray-500 hover:text-gray-700 px-1 pt-1 border-b-2 text-sm font-medium transition-colors">
+                        Compliance Actions
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Nav -->
+        <div class="sm:hidden flex justify-around bg-slate-50 border-t border-slate-200 py-2">
+            <button onclick="switchView('curriculum')" class="text-xs font-bold text-indigo-600">Curriculum</button>
+            <button onclick="switchView('scenarios')" class="text-xs font-medium text-slate-600">Threats</button>
+            <button onclick="switchView('frameworks')" class="text-xs font-medium text-slate-600">Actions</button>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-screen">
+
+        <!-- VIEW 1: CURRICULUM TIMELINE -->
+        <section id="view-curriculum" class="fade-in">
+            <div class="mb-8">
+                <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-900">Training Modules</h2>
+                        <p class="text-slate-600">Comprehensive 180-hour path covering Zero Trust, NIST AI RMF, and
+                            MITRE ATLAS Defense.</p>
+                    </div>
+
+                    <div class="flex flex-col items-end gap-3">
+                        <div class="flex flex-wrap gap-2 justify-end">
+                            <span class="text-xs font-bold text-slate-400 uppercase tracking-wide py-1.5 mr-1">Role
+                                Filter:</span>
+                            <button onclick="filterCurriculum('All')"
+                                class="role-btn bg-slate-800 text-white px-3 py-1.5 rounded-full text-xs font-bold transition-all border border-slate-800">All
+                                Roles</button>
+                            <button onclick="filterCurriculum('Architect')"
+                                class="role-btn bg-white text-slate-600 px-3 py-1.5 rounded-full text-xs font-bold transition-all border border-slate-300 hover:border-indigo-500">Architect</button>
+                            <button onclick="filterCurriculum('SOC')"
+                                class="role-btn bg-white text-slate-600 px-3 py-1.5 rounded-full text-xs font-bold transition-all border border-slate-300 hover:border-indigo-500">SOC
+                                Analyst</button>
+                            <button onclick="filterCurriculum('Engineer')"
+                                class="role-btn bg-white text-slate-600 px-3 py-1.5 rounded-full text-xs font-bold transition-all border border-slate-300 hover:border-indigo-500">Engineer</button>
+                            <button onclick="filterCurriculum('GRC')"
+                                class="role-btn bg-white text-slate-600 px-3 py-1.5 rounded-full text-xs font-bold transition-all border border-slate-300 hover:border-indigo-500">GRC</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- Module List -->
+                <div class="lg:w-1/3 space-y-4">
+                    <div id="module-list" class="space-y-3 max-h-[70vh] overflow-y-auto pr-2">
+                        <!-- Generated by JS -->
+                    </div>
+                </div>
+
+                <!-- Module Details -->
+                <div class="lg:w-2/3">
+                    <div id="module-detail-card"
+                        class="bg-white border border-slate-200 rounded-xl shadow-lg p-8 sticky top-24 transition-all duration-300">
+                        <div class="flex items-center justify-between mb-6">
+                            <span id="detail-hours"
+                                class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">Select
+                                a Module</span>
+                            <div class="flex flex-col items-end">
+                                <span id="detail-roles"
+                                    class="text-xs font-bold text-slate-400 uppercase tracking-wide mb-1"></span>
+                            </div>
+                        </div>
+
+                        <h3 id="detail-title" class="text-2xl font-bold text-slate-900 mb-4">Welcome</h3>
+                        <p id="detail-desc" class="text-slate-600 mb-6 leading-relaxed">Select a module from the list to
+                            view learning objectives and resources.</p>
+
+                        <div class="border-t border-slate-100 pt-6">
+                            <h4 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4">Key Remediation
+                                Actions Taught</h4>
+                            <ul id="detail-scenarios" class="space-y-3"></ul>
+                        </div>
+
+                        <div class="mt-6 border-t border-slate-100 pt-6">
+                            <h4
+                                class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <span class="text-lg">📚</span> Official Learning Resources
+                            </h4>
+                            <div id="detail-references" class="grid grid-cols-1 gap-2 max-h-[300px] overflow-y-auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 2: THREAT SCENARIOS -->
+        <section id="view-scenarios" class="hidden-section fade-in">
+            <div class="mb-10 text-center max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold text-slate-900">MITRE ATLAS & Regulatory Threat Matrix</h2>
+                <p class="text-slate-600 mt-2">Adversarial Threat Landscape for AI Systems (ATLAS) & Regulatory Risks.
+                </p>
+            </div>
+
+            <div id="threat-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Generated by JS -->
+            </div>
+
+            <!-- Dynamic Scenario Detail Pane -->
+            <div id="scenario-detail" class="mt-10 bg-slate-800 text-white rounded-xl p-8 hidden">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3">
+                        <h3 id="scen-title" class="text-2xl font-bold text-white mb-2">Scenario Title</h3>
+                        <div id="scen-risk" class="inline-block bg-red-500 text-xs font-bold px-2 py-1 rounded mb-4">
+                            HIGH RISK</div>
+                        <p id="scen-desc" class="text-slate-300 text-sm leading-relaxed mb-6">Description goes here.</p>
+                    </div>
+                    <div class="md:w-2/3 border-t md:border-t-0 md:border-l border-slate-600 md:pl-8 pt-6 md:pt-0">
+                        <h4 class="text-indigo-300 font-bold uppercase text-xs tracking-wider mb-4">Defense Protocol
+                        </h4>
+                        <ul id="scen-steps" class="space-y-2 text-sm text-slate-200 mb-8 list-disc list-inside"></ul>
+
+                        <div class="bg-slate-700/50 rounded-lg p-4 border border-slate-600">
+                            <h4 class="text-emerald-400 font-bold uppercase text-xs tracking-wider mb-4">Recommended
+                                Remediation Actions</h4>
+                            <p class="text-xs text-slate-400 mb-3">Click an action below to view its full compliance
+                                details and training linkage.</p>
+                            <div id="linked-actions-list" class="space-y-2">
+                                <!-- Injected via JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIEW 3: COMPLIANCE FRAMEWORKS -->
+        <section id="view-frameworks" class="hidden-section fade-in">
+            <div class="mb-8">
+                <h2 class="text-2xl font-bold text-slate-900">Compliance & Remediation Library</h2>
+                <p class="text-slate-600">A complete catalog of 70+ actions mapped to ISO 42001, NIST, MITRE, and EU
+                    Regulations.</p>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                <div class="flex flex-wrap justify-between items-center mb-6 gap-2">
+                    <h3 class="text-lg font-bold text-slate-800">Action Library</h3>
+                    <div id="score-filters" class="flex flex-wrap gap-2">
+                        <!-- Dynamic Filters generated by JS -->
+                    </div>
+                </div>
+
+                <div class="overflow-y-auto max-h-[70vh] pr-2">
+                    <div id="remediation-list" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <!-- Items injected by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JS LOGIC -->
+    <script>
+        // --- CONSTANT DATA ---
+        const curriculumData = [
+            {
+                id: 1, title: "Module 1: Identity & Zero Trust", hours: "15 Hours", roles: ["Architect", "Engineer", "CISO", "SOC"], tools: ["Entra ID", "PIM", "Workload ID"], desc: "Foundation: Verify Explicitly. Secure identities accessing AI.", scenarios: ["Enforce MFA", "Conditional Access", "Workload Identity"],
+                references: [
+                    { title: "[Foundation] Zero Trust for AI", url: "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-for-ai" },
+                    { title: "[Implementation] Securing Workload Identities", url: "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview" },
+                    { title: "[SDK] Microsoft Graph SDK", url: "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview" },
+                    { title: "[SDK] MSAL for Developers", url: "https://learn.microsoft.com/en-us/entra/identity-platform/msal-overview" }
+                ]
+            },
+            {
+                id: 2, title: "Module 2: Data Security (NIST)", hours: "20 Hours", roles: ["Architect", "GRC", "CISO"], tools: ["Microsoft Purview", "Defender"], desc: "Map & Measure data flows to prevent leakage in RAG.", scenarios: ["Define Labels", "DLP for AI", "DSPM Scanning"],
+                references: [
+                    { title: "[Foundation] Purview for AI Hub", url: "https://learn.microsoft.com/en-us/purview/ai-microsoft-purview" },
+                    { title: "[Implementation] Sensitivity Labels", url: "https://learn.microsoft.com/en-us/purview/sensitivity-labels" },
+                    { title: "[SDK] Purview SDK for Python", url: "https://learn.microsoft.com/en-us/python/api/overview/azure/purview-catalog-readme" }
+                ]
+            },
+            { id: 3, title: "Module 3: Network Infrastructure", hours: "15 Hours", roles: ["Architect", "Engineer"], tools: ["Azure Network", "Private Link"], desc: "MITRE T0029 Defense. Segment AI resources.", scenarios: ["Private Endpoints", "Disable Public Access"], references: [{ title: "[Guide] Private Link for AI", url: "https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/configure-private-link" }] },
+            { id: 4, title: "Module 4: App Safety (OWASP)", hours: "20 Hours", roles: ["Engineer", "SOC", "Architect"], tools: ["Azure AI Content Safety"], desc: "Mitigate AML.T0051 (Jailbreak).", scenarios: ["Prompt Shields", "Rate Limiting"], references: [{ title: "[Guide] Jailbreak Risk Detection", url: "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection" }] },
+            { id: 5, title: "Module 5: Copilot Governance", hours: "10 Hours", roles: ["GRC", "Architect"], tools: ["Copilot Studio"], desc: "Plugin Security and Supply Chain.", scenarios: ["Scan Plugins", "Configure DLP"], references: [{ title: "[Foundation] Securing Copilot Studio", url: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance" }] },
+            { id: 6, title: "Module 6: Threat Hunting", hours: "15 Hours", roles: ["SOC", "CISO"], tools: ["Sentinel", "Copilot for Security"], desc: "Detecting AML.T0040 (Model Inversion).", scenarios: ["Enable Connector", "Hunt Anomalies"], references: [{ title: "[Foundation] Sentinel AI Workload Protection", url: "https://learn.microsoft.com/en-us/azure/defender-for-cloud/ai-threat-protection" }] },
+            { id: 7, title: "Module 7: Agentic AI Security", hours: "10 Hours", roles: ["Architect", "Engineer"], tools: ["Agent365"], desc: "Securing autonomous agents.", scenarios: ["Spending Limits", "Access Scope"], references: [{ title: "[Deep Dive] Autonomous Agent Authentication", url: "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview" }] },
+            { id: 8, title: "Module 8: GRC - NIST & EU Act", hours: "15 Hours", roles: ["GRC", "CISO"], tools: ["Purview Compliance Manager"], desc: "EU Act transparency obligations.", scenarios: ["Red Teaming", "Human Oversight"], references: [{ title: "[Guide] Compliance Manager", url: "https://learn.microsoft.com/en-us/purview/compliance-manager" }] },
+            { id: 9, title: "Module 9: ISO 42001 (AIMS)", hours: "15 Hours", roles: ["GRC", "Architect"], tools: ["Purview"], desc: "Establishing an AI Management System.", scenarios: ["Publish Policy", "Map Inventory"], references: [{ title: "[Foundation] Azure Policy for AI", url: "https://learn.microsoft.com/en-us/azure/governance/policy/overview" }] },
+            { id: 10, title: "Module 10: Financial AI", hours: "15 Hours", roles: ["GRC", "Architect"], tools: ["Azure AI Foundry"], desc: "DORAICT Third-Party Compliance.", scenarios: ["Fairness Reports", "Resilience Plan"], references: [{ title: "[Foundation] Responsible AI Dashboard", url: "https://learn.microsoft.com/en-us/azure/machine-learning/concept-responsible-ai-dashboard" }] },
+            {
+                id: 11, title: "Module 11: Endpoints & SDKs", hours: "15 Hours", roles: ["Engineer", "SOC"], tools: ["Edge", "SDKs"], desc: "Edge for Business AI Policies.", scenarios: ["Edge Sidebar Policy", "SDK Secret Rotation"],
+                references: [
+                    { title: "[Foundation] Edge AI Policies", url: "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies#ai-settings" },
+                    { title: "[SDK] Microsoft Graph SDK", url: "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview" },
+                    { title: "[SDK] Python AI SDKs", url: "https://learn.microsoft.com/en-us/python/api/overview/azure/ai-openai-readme" }
+                ]
+            },
+            {
+                id: 12, title: "Module 12: Adversarial ML & Red Teaming", hours: "15 Hours", roles: ["Engineer", "SOC", "CISO"], tools: ["PyRIT", "Counterfit"], desc: "NEW: Automated Red Teaming for Generative AI (MITRE ATLAS).", scenarios: ["Automated Jailbreaking", "Model Enumeration", "Backdoor Discovery"],
+                references: [
+                    { title: "[Tool] PyRIT (Python Risk Identification Tool)", url: "https://github.com/Azure/PyRIT" },
+                    { title: "[Tool] Counterfit: AI Security Testing", url: "https://github.com/Azure/counterfit" },
+                    { title: "[Guide] Azure AI Red Teaming", url: "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/red-teaming" },
+                    { title: "[MITRE] ATLAS Matrix", url: "https://atlas.mitre.org/matrices/ATLAS" }
+                ]
+            }
+        ];
+
+        const secureScoreItems = [
+            { id: 1, title: "Enforce Phishing-Resistant MFA", category: "Zero Trust", impact: 5, moduleId: 0 },
+            { id: 4, title: "Workload Identity Conditional Access", category: "Zero Trust", impact: 5, moduleId: 0 },
+            { id: 11, title: "Configure Sensitivity Labels", category: "NIST", impact: 5, moduleId: 1 },
+            { id: 13, title: "Block Data Leak in Copilot (DLP)", category: "NIST", impact: 5, moduleId: 1 },
+            { id: 21, title: "Enable Private Endpoints (OpenAI)", category: "MITRE", impact: 5, moduleId: 2 },
+            { id: 31, title: "Deploy Prompt Shields (Jailbreak)", category: "OWASP", impact: 5, moduleId: 3 },
+            { id: 32, title: "Enable Content Filters", category: "EU Act", impact: 5, moduleId: 3 },
+            { id: 41, title: "Inventory Authorized AI Plugins", category: "ISO 42001", impact: 4, moduleId: 4 },
+            { id: 51, title: "Set Agent Spending Limits", category: "Financial", impact: 4, moduleId: 6 },
+            { id: 57, title: "Register High-Risk Systems (EU)", category: "EU Act", impact: 5, moduleId: 7 },
+            { id: 61, title: "Enforce Edge Sidebar Policy", category: "Zero Trust", impact: 4, moduleId: 10 },
+            { id: 62, title: "Rotate SDK Secrets (90d)", category: "Zero Trust", impact: 4, moduleId: 10 },
+            { id: 65, title: "Restrict Guest Access to AI", category: "Zero Trust", impact: 3, moduleId: 0 },
+            { id: 66, title: "Enable Access Reviews", category: "Zero Trust", impact: 3, moduleId: 0 },
+            { id: 67, title: "Use Managed Identities", category: "Zero Trust", impact: 4, moduleId: 0 },
+            { id: 68, title: "Disable User Consent for Apps", category: "Zero Trust", impact: 3, moduleId: 0 },
+            { id: 69, title: "Scan AI Data Stores (DSPM)", category: "NIST", impact: 4, moduleId: 1 },
+            { id: 70, title: "Encrypt Training Data (CMK)", category: "NIST", impact: 3, moduleId: 1 },
+            { id: 71, title: "Implement Data Retention", category: "ISO 42001", impact: 3, moduleId: 1 },
+            { id: 72, title: "Configure Insider Risk", category: "MITRE", impact: 4, moduleId: 1 },
+            { id: 73, title: "Restrict SharePoint Sharing", category: "NIST", impact: 3, moduleId: 1 },
+            { id: 74, title: "Disable Public Access (CogSvcs)", category: "MITRE", impact: 5, moduleId: 2 },
+            { id: 75, title: "Configure VNET Service Endpoints", category: "Zero Trust", impact: 3, moduleId: 2 },
+            { id: 76, title: "Enable WAF", category: "OWASP", impact: 4, moduleId: 2 },
+            { id: 77, title: "Restrict Outbound Traffic", category: "MITRE", impact: 3, moduleId: 2 },
+            { id: 78, title: "Enable DDoS Protection", category: "MITRE", impact: 3, moduleId: 2 },
+            { id: 79, title: "Implement TLS 1.2+", category: "OWASP", impact: 4, moduleId: 2 },
+            { id: 80, title: "Rotate API Keys (90d)", category: "NIST", impact: 3, moduleId: 2 },
+            { id: 81, title: "Implement Rate Limiting", category: "OWASP", impact: 4, moduleId: 3 },
+            { id: 82, title: "Configure Hate Speech Blocklist", category: "EU Act", impact: 3, moduleId: 3 },
+            { id: 83, title: "Enable Protected Material Detection", category: "ISO 42001", impact: 3, moduleId: 3 },
+            { id: 84, title: "Validate System Messages", category: "OWASP", impact: 4, moduleId: 3 },
+            { id: 85, title: "Sanitize Inputs/Outputs", category: "OWASP", impact: 4, moduleId: 3 },
+            { id: 86, title: "Scan 3rd Party Connectors", category: "MITRE", impact: 4, moduleId: 4 },
+            { id: 87, title: "Restrict High-Risk Connectors", category: "Zero Trust", impact: 3, moduleId: 4 },
+            { id: 88, title: "Enforce Publisher Verification", category: "Zero Trust", impact: 3, moduleId: 4 },
+            { id: 89, title: "Enable Sentinel Connector", category: "MITRE", impact: 5, moduleId: 5 },
+            { id: 90, title: "Config Audit Logs", category: "NIST", impact: 4, moduleId: 5 },
+            { id: 91, title: "Monitor Token Spikes", category: "MITRE", impact: 3, moduleId: 5 },
+            { id: 92, title: "Enable Threat Intel", category: "MITRE", impact: 3, moduleId: 5 },
+            { id: 93, title: "Limit Agent Depth", category: "NIST", impact: 3, moduleId: 6 },
+            { id: 94, title: "Enforce Human-in-the-Loop", category: "EU Act", impact: 5, moduleId: 6 },
+            { id: 95, title: "Generate Fairness Reports", category: "Financial", impact: 5, moduleId: 9 },
+            { id: 96, title: "Document Explainability", category: "Financial", impact: 5, moduleId: 9 },
+            { id: 97, title: "Test AI Resilience", category: "Financial", impact: 5, moduleId: 9 },
+            { id: 98, title: "Establish Risk Register", category: "ISO 42001", impact: 4, moduleId: 8 },
+            { id: 99, title: "Supplier Risk Assessment", category: "ISO 42001", impact: 3, moduleId: 8 },
+            { id: 100, title: "Monitor Model Drift", category: "Financial", impact: 4, moduleId: 9 },
+            // NEW ACTIONS FOR ATLAS
+            { id: 101, title: "Scan Model Artifacts for Secrets", category: "MITRE (Discovery)", impact: 5, moduleId: 11 },
+            { id: 102, title: "Implement Adversarial Training", category: "MITRE (Defense)", impact: 5, moduleId: 11 },
+            { id: 103, title: "Monitor GPU Utilization Spikes", category: "MITRE (Hijack)", impact: 4, moduleId: 11 },
+            { id: 104, title: "Restrict Public ML Repositories", category: "Supply Chain", impact: 4, moduleId: 11 },
+            { id: 105, title: "Verify Model Signatures", category: "Supply Chain", impact: 5, moduleId: 11 }
+        ];
+
+        let threatScenarios = [
+            {
+                title: "LLM Jailbreak (AML.T0051)",
+                risk: "CRITICAL",
+                desc: "Attacker inputs a crafted prompt to bypass filters.",
+                steps: ["Enable Shields", "System Messages"],
+                linkedActionIds: [31, 32]
+            },
+            {
+                title: "Model Inversion (AML.T0040)",
+                risk: "HIGH",
+                desc: "Reconstructing training data (PII) from outputs.",
+                steps: ["Differential Privacy", "Access Control"],
+                linkedActionIds: [14, 7]
+            },
+            {
+                title: "Supply Chain Backdoor (AML.T0018)",
+                risk: "CRITICAL",
+                desc: "NEW: Attacker poisons a model with a hidden trigger/backdoor (e.g., pickle file injection).",
+                steps: ["Scan Model Artifacts", "Verify Signatures"],
+                linkedActionIds: [101, 105]
+            },
+            {
+                title: "Resource Hijacking (AML.T0029)",
+                risk: "HIGH",
+                desc: "NEW: Compromising AI compute environments for illicit cryptomining.",
+                steps: ["Monitor GPU Usage", "Restrict Outbound"],
+                linkedActionIds: [103, 77]
+            },
+            {
+                title: "Evading ML Detectors (AML.T0015)",
+                risk: "HIGH",
+                desc: "NEW: Crafting adversarial examples to bypass fraud/malware detection.",
+                steps: ["Adversarial Training", "Drift Monitoring"],
+                linkedActionIds: [102, 100]
+            },
+            {
+                title: "LLM-Gen Phishing (AML.T0054)",
+                risk: "HIGH",
+                desc: "NEW: Internal user utilizing GenAI to create high-quality spear-phishing content.",
+                steps: ["Content Filtering", "Insider Risk Policy"],
+                linkedActionIds: [32, 72]
+            },
+            {
+                title: "Discovery of ML Artifacts (AML.T0000)",
+                risk: "MEDIUM",
+                desc: "NEW: Attacker searches open technical databases for models containing secrets.",
+                steps: ["Restrict Repos", "Scan for Secrets"],
+                linkedActionIds: [104, 101]
+            },
+            {
+                title: "Rogue Agent Ops",
+                risk: "CRITICAL",
+                desc: "Autonomous agent negotiating unauthorized contracts.",
+                steps: ["Guardrails", "Workload ID"],
+                linkedActionIds: [51, 4]
+            },
+            {
+                title: "Data Exfiltration (AML.T0057)",
+                risk: "HIGH",
+                desc: "Attacker steals data via model inference.",
+                steps: ["Edge DLP", "Labels"],
+                linkedActionIds: [11, 13, 61]
+            },
+            {
+                title: "Prompt Injection (Indirect)",
+                risk: "HIGH",
+                desc: "Attack embedded in web page consumed by LLM.",
+                steps: ["Human-in-the-loop", "Content Filtering"],
+                linkedActionIds: [31, 37]
+            },
+            {
+                title: "Model Theft (AML.T0043)",
+                risk: "HIGH",
+                desc: "Attacker steals model weights/parameters.",
+                steps: ["Private Endpoints", "Role-Based Access"],
+                linkedActionIds: [21, 22]
+            },
+            {
+                title: "Bias Violation",
+                risk: "HIGH",
+                desc: "System discriminates against protected groups.",
+                steps: ["Fairness Assessment", "Bias Mitigation"],
+                linkedActionIds: [95, 32]
+            },
+            {
+                title: "Credential Theft (SDK)",
+                risk: "HIGH",
+                desc: "Attacker steals static secrets used by SDKs.",
+                steps: ["Secret Rotation", "Managed Identity"],
+                linkedActionIds: [62, 9]
+            }
+        ];
+
+        // --- GLOBAL STATE ---
+        let currentRole = 'All';
+        let selectedModuleIndex = 0;
+        let currentScoreFilter = 'all';
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            renderModuleList();
+            loadModuleDetail(0);
+            renderThreatGrid();
+            renderScoreFilters();
+            renderSecureScore('all');
+        });
+
+        // --- CORE LOGIC ---
+        function switchView(id) {
+            ['curriculum', 'scenarios', 'frameworks'].forEach(v => {
+                document.getElementById('view-' + v).classList.add('hidden-section');
+                const btn = document.getElementById('nav-' + v);
+                if (btn) {
+                    btn.classList.remove('active-nav');
+                    btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'border-b-2');
+                }
+            });
+            document.getElementById('view-' + id).classList.remove('hidden-section');
+            const activeBtn = document.getElementById('nav-' + id);
+            if (activeBtn) {
+                activeBtn.classList.add('active-nav');
+                activeBtn.classList.remove('border-transparent', 'text-gray-500');
+            }
+        }
+
+        // --- CURRICULUM ---
+        function filterCurriculum(role) {
+            currentRole = role;
+            renderModuleList();
+            document.querySelectorAll('.role-btn').forEach(b => {
+                b.className = b.innerText.includes(role) ? "role-btn bg-slate-800 text-white px-3 py-1.5 rounded-full text-xs font-bold border border-slate-800" : "role-btn bg-white text-slate-600 px-3 py-1.5 rounded-full text-xs font-bold border border-slate-300 hover:border-indigo-500";
+            });
+        }
+
+        function renderModuleList() {
+            const list = document.getElementById('module-list');
+            list.innerHTML = '';
+            const filtered = curriculumData.map((m, i) => ({ ...m, idx: i }))
+                .filter(m => (currentRole === 'All' || m.roles.includes(currentRole)));
+
+            filtered.forEach(m => {
+                const div = document.createElement('div');
+                div.className = `p-4 rounded-lg border border-slate-200 cursor-pointer transition-all ${m.idx === selectedModuleIndex ? 'bg-indigo-50 border-indigo-500 ring-1 ring-indigo-500' : 'bg-white'}`;
+                div.onclick = () => { selectedModuleIndex = m.idx; loadModuleDetail(m.idx); renderModuleList(); };
+                div.innerHTML = `<div class="flex justify-between items-center mb-1"><span class="text-[10px] font-bold text-slate-500 uppercase">${m.hours}</span><div class="h-2 w-2 rounded-full bg-slate-300"></div></div><h3 class="font-bold text-sm">${m.title}</h3>`;
+                list.appendChild(div);
+            });
+        }
+
+        function loadModuleDetail(idx) {
+            const m = curriculumData[idx];
+            if (!m) return;
+            document.getElementById('detail-title').innerText = m.title;
+            document.getElementById('detail-desc').innerText = m.desc;
+            document.getElementById('detail-hours').innerText = m.hours;
+            document.getElementById('detail-roles').innerText = "For: " + m.roles.join(", ");
+
+            const slist = document.getElementById('detail-scenarios'); slist.innerHTML = '';
+            m.scenarios.forEach(s => slist.innerHTML += `<li class="flex items-start gap-2 text-sm text-slate-600"><span>✓</span><span>${s}</span></li>`);
+
+            const rlist = document.getElementById('detail-references'); rlist.innerHTML = '';
+            m.references.forEach(r => {
+                rlist.innerHTML += `<a href="${r.url}" target="_blank" class="block p-3 rounded bg-slate-50 border border-slate-200 hover:border-indigo-400 transition-colors"><div class="font-bold text-sm">${r.title}</div><div class="text-[10px] text-slate-400 truncate">${r.url}</div></a>`;
+            });
+        }
+
+        // --- THREAT MATRIX ---
+        function renderThreatGrid() {
+            const grid = document.getElementById('threat-grid'); grid.innerHTML = '';
+            threatScenarios.forEach((t, i) => {
+                grid.innerHTML += `
+                    <div onclick="expandScenario(${i})" class="p-6 bg-white border border-slate-200 rounded-xl cursor-pointer hover:shadow-md relative overflow-hidden transition-all">
+                        <div class="absolute top-0 right-0 px-2 py-1 text-[10px] font-bold bg-red-100 text-red-600">${t.risk}</div>
+                        <h3 class="font-bold text-slate-800 mb-2 mt-2">${t.title}</h3>
+                        <p class="text-xs text-slate-500 mb-4 line-clamp-2">${t.desc}</p>
+                        <span class="text-indigo-600 text-xs font-bold">View Protocol &rarr;</span>
+                    </div>
+                `;
+            });
+        }
+
+        function expandScenario(i) {
+            const t = threatScenarios[i];
+            document.getElementById('scen-title').innerText = t.title;
+            document.getElementById('scen-risk').innerText = t.risk;
+            document.getElementById('scen-desc').innerText = t.desc;
+            const sl = document.getElementById('scen-steps'); sl.innerHTML = '';
+            t.steps.forEach(s => sl.innerHTML += `<li>${s}</li>`);
+
+            const al = document.getElementById('linked-actions-list'); al.innerHTML = '';
+            t.linkedActionIds.forEach(id => {
+                const action = secureScoreItems.find(x => x.id === id);
+                if (action) {
+                    al.innerHTML += `
+                        <div class="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-700 cursor-pointer hover:bg-slate-800 transition-colors" onclick="goToAction(${action.id})">
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] text-slate-200 font-bold">${action.title}</span>
+                            </div>
+                            <span class="text-[10px] text-indigo-400 font-bold hover:underline">View Details &rarr;</span>
+                        </div>
+                    `;
+                }
+            });
+            document.getElementById('scenario-detail').classList.remove('hidden');
+            document.getElementById('scenario-detail').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // --- FRAMEWORK ACTIONS ---
+        function filterScore(cat) { renderSecureScore(cat); }
+
+        function renderScoreFilters() {
+            const cats = new Set();
+            secureScoreItems.forEach(i => i.category.split('/').forEach(c => cats.add(c.trim())));
+            const container = document.getElementById('score-filters');
+            container.innerHTML = `<button onclick="filterScore('all')" class="text-xs bg-slate-800 text-white px-3 py-1 rounded-full font-bold">All</button>`;
+            cats.forEach(c => container.innerHTML += `<button onclick="filterScore('${c}')" class="text-xs bg-white text-slate-600 border border-slate-300 px-3 py-1 rounded-full font-bold hover:bg-slate-100">${c}</button>`);
+        }
+
+        function renderSecureScore(filter) {
+            const list = document.getElementById('remediation-list'); list.innerHTML = '';
+            secureScoreItems.filter(i => filter === 'all' || i.category.includes(filter)).forEach((i) => {
+                const div = document.createElement('div');
+                div.id = `action-card-${i.id}`; // Assign unique ID for linking
+                div.className = "flex flex-col justify-between p-4 bg-slate-50 border border-slate-200 rounded-lg hover:shadow-sm transition-all duration-500";
+                div.innerHTML = `
+                    <div class="mb-2">
+                        <div class="text-sm font-bold text-slate-800">${i.title}</div>
+                        <div class="text-[10px] text-slate-500 mt-1 font-medium">${i.category} • Impact: ${i.impact} pts</div>
+                    </div>
+                    <button onclick="goToModule(${i.moduleId})" class="self-end text-[10px] px-3 py-1 border border-indigo-200 text-indigo-600 rounded font-bold hover:bg-indigo-50">Go to Training &rarr;</button>
+                `;
+                list.appendChild(div);
+            });
+        }
+
+        function goToAction(id) {
+            switchView('frameworks');
+            filterScore('all'); // Ensure item is visible
+            setTimeout(() => {
+                const el = document.getElementById(`action-card-${id}`);
+                if (el) {
+                    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    el.classList.add('highlight-action');
+                    setTimeout(() => el.classList.remove('highlight-action'), 2000);
+                }
+            }, 100);
+        }
+
+        function goToModule(mId) {
+            switchView('curriculum');
+            filterCurriculum('All');
+            selectedModuleIndex = mId;
+            loadModuleDetail(mId);
+            renderModuleList();
+            document.getElementById('module-detail-card').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderModuleList();
+            loadModuleDetail(0);
+            renderThreatGrid();
+            renderScoreFilters();
+            renderSecureScore('all');
+        });
+    </script>
+</body>
+
+</html>
