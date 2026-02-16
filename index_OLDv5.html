@@ -67,48 +67,6 @@
                 box-shadow: none;
             }
         }
-
-        .badge-new {
-            background-color: #dbeafe;
-            color: #1e40af;
-            font-size: 0.6rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-left: 4px;
-            border: 1px solid #93c5fd;
-            font-weight: bold;
-        }
-
-        .tactic-btn {
-            font-size: 0.7rem;
-            padding: 4px 8px;
-            border-radius: 4px;
-            border: 1px solid #e2e8f0;
-            background-color: #f8fafc;
-            color: #64748b;
-            transition: all 0.2s;
-            text-transform: uppercase;
-            font-family: monospace;
-        }
-
-        .tactic-btn:hover {
-            background-color: #e2e8f0;
-            color: #334155;
-        }
-
-        .tactic-btn.active {
-            background-color: #4f46e5;
-            color: white;
-            border-color: #4f46e5;
-        }
-
-        /* Type Icon Styles */
-        .res-icon {
-            display: inline-block;
-            width: 16px;
-            text-align: center;
-            margin-right: 4px;
-        }
     </style>
 </head>
 
@@ -119,14 +77,11 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center gap-3">
-                        <span class="text-2xl font-bold tracking-tight">
-                            <span class="text-indigo-600">Secure</span><span class="text-slate-900">AI</span> <span
-                                class="text-indigo-600">Path</span>
-                        </span>
-                        <span
-                            class="bg-slate-200 text-slate-700 text-xs font-semibold px-2.5 py-1 rounded-md border border-slate-300">Reference
-                            Edition v6</span>
+                    <div class="flex-shrink-0 flex items-center gap-2">
+                        <span class="text-2xl font-bold text-indigo-600">Secure<span class="text-slate-900">AI</span>
+                            Path</span>
+                        <span class="bg-slate-100 text-slate-600 text-xs font-semibold px-2.5 py-0.5 rounded">Reference
+                            Edition v5.0</span>
                     </div>
                 </div>
                 <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
@@ -148,7 +103,7 @@
         <!-- Mobile Nav -->
         <div class="sm:hidden flex justify-around bg-slate-50 border-t border-slate-200 py-2">
             <button onclick="switchView('curriculum')" class="text-xs font-bold text-indigo-600">Curriculum</button>
-            <button onclick="switchView('scenarios')" class="text-xs font-medium text-slate-600">ATLAS</button>
+            <button onclick="switchView('scenarios')" class="text-xs font-medium text-slate-600">Threats</button>
             <button onclick="switchView('frameworks')" class="text-xs font-medium text-slate-600">Actions</button>
         </div>
     </nav>
@@ -162,11 +117,11 @@
                 <div class="flex flex-col md:flex-row justify-between items-start gap-6">
                     <div>
                         <h2 class="text-2xl font-bold text-slate-900">Training Modules</h2>
-                        <p class="text-slate-600">linkedin.com/in/MustAI - Prerelease - Comprehensive 200-hour Learning
-                            Path covering Zero
+                        <p class="text-slate-600"> linkedin.com/in/MustAI - Prerelease - Comprehensive 180-hour path
+                            covering Zero
                             Trust,
                             NIST AI RMF, and
-                            MITRE ATLAS.</p>
+                            MITRE ATLAS Defense.</p>
                     </div>
 
                     <div class="flex flex-col items-end gap-3">
@@ -237,16 +192,13 @@
 
         <!-- VIEW 2: THREAT SCENARIOS -->
         <section id="view-scenarios" class="hidden-section fade-in">
-            <div class="mb-8 text-center max-w-6xl mx-auto">
-                <h2 class="text-2xl font-bold text-slate-900">MITRE ATLAS Threat Matrix</h2>
-                <p class="text-slate-600 mt-2">Comprehensive coverage of Adversarial Tactics. Filter by Tactic below.
+            <div class="mb-10 text-center max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold text-slate-900">MITRE ATLAS & Regulatory Threat Matrix</h2>
+                <p class="text-slate-600 mt-2">Adversarial Threat Landscape for AI Systems (ATLAS) & Regulatory Risks.
                 </p>
-                <div id="tactic-filters" class="mt-4 flex flex-wrap justify-center gap-2">
-                    <!-- Filters injected by JS -->
-                </div>
             </div>
 
-            <div id="threat-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div id="threat-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Generated by JS -->
             </div>
 
@@ -254,9 +206,6 @@
             <div id="scenario-detail" class="mt-10 bg-slate-800 text-white rounded-xl p-8 hidden">
                 <div class="flex flex-col md:flex-row gap-8">
                     <div class="md:w-1/3">
-                        <div class="mb-2"><span id="scen-badge"
-                                class="bg-indigo-600 text-white text-[10px] font-bold px-2 py-1 rounded">TACTIC</span>
-                        </div>
                         <h3 id="scen-title" class="text-2xl font-bold text-white mb-2">Scenario Title</h3>
                         <div id="scen-risk" class="inline-block bg-red-500 text-xs font-bold px-2 py-1 rounded mb-4">
                             HIGH RISK</div>
@@ -270,8 +219,8 @@
                         <div class="bg-slate-700/50 rounded-lg p-4 border border-slate-600">
                             <h4 class="text-emerald-400 font-bold uppercase text-xs tracking-wider mb-4">Recommended
                                 Remediation Actions</h4>
-                            <p class="text-xs text-slate-400 mb-3">Click an action below to view details in the library.
-                            </p>
+                            <p class="text-xs text-slate-400 mb-3">Click an action below to view its full compliance
+                                details and training linkage.</p>
                             <div id="linked-actions-list" class="space-y-2">
                                 <!-- Injected via JS -->
                             </div>
@@ -285,7 +234,7 @@
         <section id="view-frameworks" class="hidden-section fade-in">
             <div class="mb-8">
                 <h2 class="text-2xl font-bold text-slate-900">Compliance & Remediation Library</h2>
-                <p class="text-slate-600">A complete catalog of 85+ actions mapped to ISO 42001, NIST, MITRE, and EU
+                <p class="text-slate-600">A complete catalog of 70+ actions mapped to ISO 42001, NIST, MITRE, and EU
                     Regulations.</p>
             </div>
 
@@ -315,33 +264,43 @@
                 references: [
                     { title: "[Foundation] Zero Trust for AI", url: "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-for-ai" },
                     { title: "[Implementation] Securing Workload Identities", url: "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview" },
-                    { title: "[Guide] Entra ID Governance", url: "https://learn.microsoft.com/en-us/entra/id-governance/identity-governance-overview" },
-                    { title: "[Video] Microsoft Mechanics: Zero Trust for AI", url: "https://www.youtube.com/watch?v=1F_YJqNlE6A" },
                     { title: "[SDK] Microsoft Graph SDK", url: "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview" },
                     { title: "[SDK] MSAL for Developers", url: "https://learn.microsoft.com/en-us/entra/identity-platform/msal-overview" }
                 ]
             },
             {
-                id: 2, title: "Module 2: Data Security (NIST)", hours: "20 Hours", roles: ["Architect", "GRC", "CISO"], tools: ["Microsoft Purview", "Defender"], desc: "Map & Measure data flows to prevent leakage in RAG and Shadow AI.", scenarios: ["Define Labels", "DLP for AI", "DSPM Scanning"],
+                id: 2, title: "Module 2: Data Security (NIST)", hours: "20 Hours", roles: ["Architect", "GRC", "CISO"], tools: ["Microsoft Purview", "Defender"], desc: "Map & Measure data flows to prevent leakage in RAG.", scenarios: ["Define Labels", "DLP for AI", "DSPM Scanning"],
                 references: [
                     { title: "[Foundation] Purview for AI Hub", url: "https://learn.microsoft.com/en-us/purview/ai-microsoft-purview" },
-                    { title: "[Guide] Defender DSPM", url: "https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-data-security-posture-management" },
                     { title: "[Implementation] Sensitivity Labels", url: "https://learn.microsoft.com/en-us/purview/sensitivity-labels" },
                     { title: "[SDK] Purview SDK for Python", url: "https://learn.microsoft.com/en-us/python/api/overview/azure/purview-catalog-readme" }
                 ]
             },
-            { id: 3, title: "Module 3: Network Infrastructure", hours: "15 Hours", roles: ["Architect", "Engineer"], tools: ["Azure Network", "Private Link"], desc: "MITRE T0029 Defense. Segment AI resources.", scenarios: ["Private Endpoints", "Disable Public Access"], references: [{ title: "[Guide] Private Link for AI", url: "https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/configure-private-link" }, { title: "[Implementation] Azure Firewall for AI", url: "https://learn.microsoft.com/en-us/azure/firewall/overview" }] },
-            { id: 4, title: "Module 4: App Safety (OWASP)", hours: "20 Hours", roles: ["Engineer", "SOC", "Architect"], tools: ["Azure AI Content Safety", "Gateway"], desc: "Mitigate AML.T0051 (Jailbreak) and T0054 (Data Poisoning).", scenarios: ["Prompt Shields", "Rate Limiting", "Configure Content Filters"], references: [{ title: "[Foundation] Azure AI Content Safety", url: "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview" }, { title: "[Deep Dive] Prompt Engineering Guide", url: "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering" }] },
-            { id: 5, title: "Module 5: Copilot Governance", hours: "10 Hours", roles: ["GRC", "Architect"], tools: ["Copilot Studio", "Power Platform"], desc: "Plugin Security and Supply Chain.", scenarios: ["Scan Plugins", "Configure DLP"], references: [{ title: "[Foundation] Securing Copilot Studio", url: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance" }] },
-            { id: 6, title: "Module 6: Threat Hunting", hours: "15 Hours", roles: ["SOC", "CISO"], tools: ["Sentinel", "Copilot for Security"], desc: "Detecting AML.T0040 (Model Inversion) and T0043 (Theft).", scenarios: ["Enable Connector", "Hunt Anomalies"], references: [{ title: "[Foundation] Sentinel AI Workload Protection", url: "https://learn.microsoft.com/en-us/azure/defender-for-cloud/ai-threat-protection" }] },
+            { id: 3, title: "Module 3: Network Infrastructure", hours: "15 Hours", roles: ["Architect", "Engineer"], tools: ["Azure Network", "Private Link"], desc: "MITRE T0029 Defense. Segment AI resources.", scenarios: ["Private Endpoints", "Disable Public Access"], references: [{ title: "[Guide] Private Link for AI", url: "https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/configure-private-link" }] },
+            { id: 4, title: "Module 4: App Safety (OWASP)", hours: "20 Hours", roles: ["Engineer", "SOC", "Architect"], tools: ["Azure AI Content Safety"], desc: "Mitigate AML.T0051 (Jailbreak).", scenarios: ["Prompt Shields", "Rate Limiting"], references: [{ title: "[Guide] Jailbreak Risk Detection", url: "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/concepts/jailbreak-detection" }] },
+            { id: 5, title: "Module 5: Copilot Governance", hours: "10 Hours", roles: ["GRC", "Architect"], tools: ["Copilot Studio"], desc: "Plugin Security and Supply Chain.", scenarios: ["Scan Plugins", "Configure DLP"], references: [{ title: "[Foundation] Securing Copilot Studio", url: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance" }] },
+            { id: 6, title: "Module 6: Threat Hunting", hours: "15 Hours", roles: ["SOC", "CISO"], tools: ["Sentinel", "Copilot for Security"], desc: "Detecting AML.T0040 (Model Inversion).", scenarios: ["Enable Connector", "Hunt Anomalies"], references: [{ title: "[Foundation] Sentinel AI Workload Protection", url: "https://learn.microsoft.com/en-us/azure/defender-for-cloud/ai-threat-protection" }] },
             { id: 7, title: "Module 7: Agentic AI Security", hours: "10 Hours", roles: ["Architect", "Engineer"], tools: ["Agent365"], desc: "Securing autonomous agents.", scenarios: ["Spending Limits", "Access Scope"], references: [{ title: "[Deep Dive] Autonomous Agent Authentication", url: "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview" }] },
             { id: 8, title: "Module 8: GRC - NIST & EU Act", hours: "15 Hours", roles: ["GRC", "CISO"], tools: ["Purview Compliance Manager"], desc: "EU Act transparency obligations.", scenarios: ["Red Teaming", "Human Oversight"], references: [{ title: "[Guide] Compliance Manager", url: "https://learn.microsoft.com/en-us/purview/compliance-manager" }] },
-            { id: 9, title: "Module 9: ISO 42001 (AIMS)", hours: "15 Hours", roles: ["GRC", "Architect"], tools: ["Purview", "Azure Policy"], desc: "Establishing an AI Management System.", scenarios: ["Publish Policy", "Map Inventory"], references: [{ title: "[Foundation] Azure Policy for AI", url: "https://learn.microsoft.com/en-us/azure/governance/policy/overview" }] },
+            { id: 9, title: "Module 9: ISO 42001 (AIMS)", hours: "15 Hours", roles: ["GRC", "Architect"], tools: ["Purview"], desc: "Establishing an AI Management System.", scenarios: ["Publish Policy", "Map Inventory"], references: [{ title: "[Foundation] Azure Policy for AI", url: "https://learn.microsoft.com/en-us/azure/governance/policy/overview" }] },
             { id: 10, title: "Module 10: Financial AI", hours: "15 Hours", roles: ["GRC", "Architect"], tools: ["Azure AI Foundry"], desc: "DORAICT Third-Party Compliance.", scenarios: ["Fairness Reports", "Resilience Plan"], references: [{ title: "[Foundation] Responsible AI Dashboard", url: "https://learn.microsoft.com/en-us/azure/machine-learning/concept-responsible-ai-dashboard" }] },
-            { id: 11, title: "Module 11: Endpoints & SDKs", hours: "15 Hours", roles: ["Engineer", "SOC"], tools: ["Edge", "SDKs"], desc: "Edge for Business AI Policies.", scenarios: ["Edge Sidebar Policy", "SDK Secret Rotation"], references: [{ title: "[Foundation] Edge AI Policies", url: "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies#ai-settings" }] },
-            { id: 12, title: "Module 12: Adversarial ML & Red Teaming", hours: "15 Hours", roles: ["Engineer", "SOC", "CISO"], tools: ["PyRIT", "Counterfit"], desc: "NEW: Automated Red Teaming for Generative AI (MITRE ATLAS).", scenarios: ["Automated Jailbreaking", "Model Enumeration", "Backdoor Discovery"], references: [{ title: "[GitHub] PyRIT", url: "https://github.com/Azure/PyRIT" }, { title: "[GitHub] Counterfit", url: "https://github.com/Azure/counterfit" }] },
-            { id: 13, title: "Module 13: Insider Risk Management", hours: "15 Hours", roles: ["GRC", "SOC", "CISO"], tools: ["Purview IRM"], desc: "Detecting risky AI usage and data exfiltration by insiders.", scenarios: ["Adaptive Protection", "Risky Prompt Detection"], references: [{ title: "[Foundation] Insider Risk Management", url: "https://learn.microsoft.com/en-us/purview/insider-risk-management" }] },
-            { id: 14, title: "Module 14: AI-SPM", hours: "15 Hours", roles: ["Architect", "SOC"], tools: ["Defender for Cloud"], desc: "Continuous discovery and vulnerability assessment of AI models.", scenarios: ["Shadow AI Discovery", "Model Vuln Scanning"], references: [{ title: "[Foundation] AI-SPM Overview", url: "https://learn.microsoft.com/en-us/azure/defender-for-cloud/ai-security-posture-management" }] }
+            {
+                id: 11, title: "Module 11: Endpoints & SDKs", hours: "15 Hours", roles: ["Engineer", "SOC"], tools: ["Edge", "SDKs"], desc: "Edge for Business AI Policies.", scenarios: ["Edge Sidebar Policy", "SDK Secret Rotation"],
+                references: [
+                    { title: "[Foundation] Edge AI Policies", url: "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies#ai-settings" },
+                    { title: "[SDK] Microsoft Graph SDK", url: "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview" },
+                    { title: "[SDK] Python AI SDKs", url: "https://learn.microsoft.com/en-us/python/api/overview/azure/ai-openai-readme" }
+                ]
+            },
+            {
+                id: 12, title: "Module 12: Adversarial ML & Red Teaming", hours: "15 Hours", roles: ["Engineer", "SOC", "CISO"], tools: ["PyRIT", "Counterfit"], desc: "NEW: Automated Red Teaming for Generative AI (MITRE ATLAS).", scenarios: ["Automated Jailbreaking", "Model Enumeration", "Backdoor Discovery"],
+                references: [
+                    { title: "[Tool] PyRIT (Python Risk Identification Tool)", url: "https://github.com/Azure/PyRIT" },
+                    { title: "[Tool] Counterfit: AI Security Testing", url: "https://github.com/Azure/counterfit" },
+                    { title: "[Guide] Azure AI Red Teaming", url: "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/red-teaming" },
+                    { title: "[MITRE] ATLAS Matrix", url: "https://atlas.mitre.org/matrices/ATLAS" }
+                ]
+            }
         ];
 
         const secureScoreItems = [
@@ -357,85 +316,154 @@
             { id: 57, title: "Register High-Risk Systems (EU)", category: "EU Act", impact: 5, moduleId: 7 },
             { id: 61, title: "Enforce Edge Sidebar Policy", category: "Zero Trust", impact: 4, moduleId: 10 },
             { id: 62, title: "Rotate SDK Secrets (90d)", category: "Zero Trust", impact: 4, moduleId: 10 },
-            { id: 107, title: "Restrict Public ML Repos (HuggingFace)", category: "MITRE", impact: 4, moduleId: 11 },
-            { id: 108, title: "Disable LLM Cascade/Loops", category: "MITRE", impact: 3, moduleId: 6 },
-            { id: 109, title: "Harden MLflow Instances", category: "MITRE", impact: 4, moduleId: 11 },
-            { id: 110, title: "Verify Training Data Checksums", category: "NIST", impact: 3, moduleId: 1 },
-            { id: 111, title: "Monitor Adversarial Access Patterns", category: "MITRE", impact: 4, moduleId: 5 },
-            { id: 112, title: "Isolate AI Jupyter Notebooks", category: "Zero Trust", impact: 3, moduleId: 2 },
-            { id: 113, title: "Establish AI Kill Switch", category: "EU Act", impact: 5, moduleId: 7 },
-            { id: 114, title: "Review AI Vendor SBOMs", category: "Supply Chain", impact: 4, moduleId: 4 },
-            { id: 115, title: "Limit GPU Compute Quotas", category: "MITRE", impact: 3, moduleId: 2 },
-            // Truncated list for brevity, includes all from previous
             { id: 65, title: "Restrict Guest Access to AI", category: "Zero Trust", impact: 3, moduleId: 0 },
             { id: 66, title: "Enable Access Reviews", category: "Zero Trust", impact: 3, moduleId: 0 },
-            { id: 89, title: "Enable Sentinel Connector", category: "MITRE", impact: 5, moduleId: 5 }
+            { id: 67, title: "Use Managed Identities", category: "Zero Trust", impact: 4, moduleId: 0 },
+            { id: 68, title: "Disable User Consent for Apps", category: "Zero Trust", impact: 3, moduleId: 0 },
+            { id: 69, title: "Scan AI Data Stores (DSPM)", category: "NIST", impact: 4, moduleId: 1 },
+            { id: 70, title: "Encrypt Training Data (CMK)", category: "NIST", impact: 3, moduleId: 1 },
+            { id: 71, title: "Implement Data Retention", category: "ISO 42001", impact: 3, moduleId: 1 },
+            { id: 72, title: "Configure Insider Risk", category: "MITRE", impact: 4, moduleId: 1 },
+            { id: 73, title: "Restrict SharePoint Sharing", category: "NIST", impact: 3, moduleId: 1 },
+            { id: 74, title: "Disable Public Access (CogSvcs)", category: "MITRE", impact: 5, moduleId: 2 },
+            { id: 75, title: "Configure VNET Service Endpoints", category: "Zero Trust", impact: 3, moduleId: 2 },
+            { id: 76, title: "Enable WAF", category: "OWASP", impact: 4, moduleId: 2 },
+            { id: 77, title: "Restrict Outbound Traffic", category: "MITRE", impact: 3, moduleId: 2 },
+            { id: 78, title: "Enable DDoS Protection", category: "MITRE", impact: 3, moduleId: 2 },
+            { id: 79, title: "Implement TLS 1.2+", category: "OWASP", impact: 4, moduleId: 2 },
+            { id: 80, title: "Rotate API Keys (90d)", category: "NIST", impact: 3, moduleId: 2 },
+            { id: 81, title: "Implement Rate Limiting", category: "OWASP", impact: 4, moduleId: 3 },
+            { id: 82, title: "Configure Hate Speech Blocklist", category: "EU Act", impact: 3, moduleId: 3 },
+            { id: 83, title: "Enable Protected Material Detection", category: "ISO 42001", impact: 3, moduleId: 3 },
+            { id: 84, title: "Validate System Messages", category: "OWASP", impact: 4, moduleId: 3 },
+            { id: 85, title: "Sanitize Inputs/Outputs", category: "OWASP", impact: 4, moduleId: 3 },
+            { id: 86, title: "Scan 3rd Party Connectors", category: "MITRE", impact: 4, moduleId: 4 },
+            { id: 87, title: "Restrict High-Risk Connectors", category: "Zero Trust", impact: 3, moduleId: 4 },
+            { id: 88, title: "Enforce Publisher Verification", category: "Zero Trust", impact: 3, moduleId: 4 },
+            { id: 89, title: "Enable Sentinel Connector", category: "MITRE", impact: 5, moduleId: 5 },
+            { id: 90, title: "Config Audit Logs", category: "NIST", impact: 4, moduleId: 5 },
+            { id: 91, title: "Monitor Token Spikes", category: "MITRE", impact: 3, moduleId: 5 },
+            { id: 92, title: "Enable Threat Intel", category: "MITRE", impact: 3, moduleId: 5 },
+            { id: 93, title: "Limit Agent Depth", category: "NIST", impact: 3, moduleId: 6 },
+            { id: 94, title: "Enforce Human-in-the-Loop", category: "EU Act", impact: 5, moduleId: 6 },
+            { id: 95, title: "Generate Fairness Reports", category: "Financial", impact: 5, moduleId: 9 },
+            { id: 96, title: "Document Explainability", category: "Financial", impact: 5, moduleId: 9 },
+            { id: 97, title: "Test AI Resilience", category: "Financial", impact: 5, moduleId: 9 },
+            { id: 98, title: "Establish Risk Register", category: "ISO 42001", impact: 4, moduleId: 8 },
+            { id: 99, title: "Supplier Risk Assessment", category: "ISO 42001", impact: 3, moduleId: 8 },
+            { id: 100, title: "Monitor Model Drift", category: "Financial", impact: 4, moduleId: 9 },
+            // NEW ACTIONS FOR ATLAS
+            { id: 101, title: "Scan Model Artifacts for Secrets", category: "MITRE (Discovery)", impact: 5, moduleId: 11 },
+            { id: 102, title: "Implement Adversarial Training", category: "MITRE (Defense)", impact: 5, moduleId: 11 },
+            { id: 103, title: "Monitor GPU Utilization Spikes", category: "MITRE (Hijack)", impact: 4, moduleId: 11 },
+            { id: 104, title: "Restrict Public ML Repositories", category: "Supply Chain", impact: 4, moduleId: 11 },
+            { id: 105, title: "Verify Model Signatures", category: "Supply Chain", impact: 5, moduleId: 11 }
         ];
 
-        const threatScenarios = [
-            // --- RECONNAISSANCE ---
-            { title: "Search Open Tech Databases (AML.T0004)", risk: "MEDIUM", tactic: "Reconnaissance", desc: "Adversary searches public repositories for exposed model info or keys.", steps: ["Restrict Public Access", "Secret Scanning"], linkedActionIds: [106, 107] },
-            { title: "Acquire Public ML Artifacts (AML.T0002)", risk: "MEDIUM", tactic: "Reconnaissance", desc: "Adversary downloads public models to find vulnerabilities.", steps: ["Model Inventory", "Vulnerability Scanning"], linkedActionIds: [104, 105] },
-            { title: "Active Scanning (AML.T0003)", risk: "LOW", tactic: "Reconnaissance", desc: "Scanning for open ports/services on AI infrastructure.", steps: ["Disable Public Network Access", "WAF"], linkedActionIds: [22, 24] },
-
-            // --- RESOURCE DEVELOPMENT ---
-            { title: "Poison Training Data (AML.T0020)", risk: "HIGH", tactic: "Resource Dev", desc: "Adversary modifies training data to introduce backdoors.", steps: ["Data Checksums", "Immutable Storage"], linkedActionIds: [110, 69] },
-            { title: "Establish Accounts (AML.T0016)", risk: "HIGH", tactic: "Resource Dev", desc: "Adversary creates accounts to interact with models.", steps: ["MFA Enforcement", "Identity Protection"], linkedActionIds: [1, 3] },
-            { title: "Publish Poisoned Datasets (AML.T0019)", risk: "HIGH", tactic: "Resource Dev", desc: "Attacker seeds public datasets with malicious data.", steps: ["Data Provenance", "Vendor Assessment"], linkedActionIds: [114, 59] },
-
-            // --- INITIAL ACCESS ---
-            { title: "Valid Accounts (AML.T0006)", risk: "CRITICAL", tactic: "Initial Access", desc: "Compromising cloud accounts to access AI services.", steps: ["Conditional Access", "PIM"], linkedActionIds: [4, 5] },
-            { title: "Supply Chain Compromise (AML.T0010)", risk: "HIGH", tactic: "Initial Access", desc: "Malicious 3rd party plugin/model used in Copilot.", steps: ["Model Signing", "Plugin Scanning"], linkedActionIds: [41, 114] },
-            { title: "Exploit Public Facing App (AML.T0008)", risk: "HIGH", tactic: "Initial Access", desc: "Exploiting vulnerabilities in AI web frontends.", steps: ["WAF", "Patch Management"], linkedActionIds: [24, 76] },
-
-            // --- EXECUTION ---
-            { title: "LLM Jailbreak (AML.T0051)", risk: "CRITICAL", tactic: "Execution", desc: "Attacker inputs a crafted prompt to bypass filters.", steps: ["Enable Shields", "System Messages"], linkedActionIds: [31, 32] },
-            { title: "User Execution (AML.T0053)", risk: "HIGH", tactic: "Execution", desc: "Tricking users to run malicious code via AI.", steps: ["App Safety", "Training"], linkedActionIds: [32, 45] },
-            { title: "LLM-Gen Phishing (AML.T0054)", risk: "HIGH", tactic: "Execution", desc: "Using AI to generate high-quality phishing emails.", steps: ["Content Filtering", "Insider Risk"], linkedActionIds: [32, 103] },
-
-            // --- PERSISTENCE ---
-            { title: "Poison Model (AML.T0018)", risk: "CRITICAL", tactic: "Persistence", desc: "Backdooring a model file.", steps: ["Model Signing", "Scan Artifacts"], linkedActionIds: [105, 104] },
-            { title: "Backdoor ML Model (AML.T0018)", risk: "CRITICAL", tactic: "Persistence", desc: "Embedding hidden triggers in model weights.", steps: ["Adversarial Training", "Red Teaming"], linkedActionIds: [105, 8] },
-
-            // --- EVASION ---
-            { title: "Evade ML Model (AML.T0015)", risk: "HIGH", tactic: "Evasion", desc: "Adversarial examples to bypass detection.", steps: ["Adversarial Training", "Drift Monitoring"], linkedActionIds: [111, 100] },
-            { title: "Impair Process Control (AML.T0035)", risk: "MEDIUM", tactic: "Evasion", desc: "Manipulating AI operational parameters.", steps: ["RBAC", "Access Reviews"], linkedActionIds: [8, 66] },
-
-            // --- EXFILTRATION ---
-            { title: "Model Inversion (AML.T0040)", risk: "HIGH", tactic: "Exfiltration", desc: "Reconstructing PII from outputs.", steps: ["Differential Privacy", "Output Filtering"], linkedActionIds: [14, 37] },
-            { title: "Model Theft (AML.T0043)", risk: "HIGH", tactic: "Exfiltration", desc: "Stealing model weights.", steps: ["Private Endpoints", "Role-Based Access"], linkedActionIds: [21, 65] },
-            { title: "Data Exfiltration (AML.T0057)", risk: "HIGH", tactic: "Exfiltration", desc: "Stealing data via inference.", steps: ["DLP", "Egress Control"], linkedActionIds: [13, 25] },
-            { title: "LLM Side-Channel (AML.T0052)", risk: "MEDIUM", tactic: "Exfiltration", desc: "Gleaning info via token consumption timing.", steps: ["Constant Time Ops", "Rate Limiting"], linkedActionIds: [33, 48] },
-
-            // --- IMPACT ---
-            { title: "Denial of ML Service (AML.T0029)", risk: "MEDIUM", tactic: "Impact", desc: "Resource exhaustion.", steps: ["Rate Limiting", "Quotas"], linkedActionIds: [33, 115] },
-            { title: "Erode Integrity (AML.T0031)", risk: "HIGH", tactic: "Impact", desc: "Degrading model performance.", steps: ["Drift Detection", "Versioning"], linkedActionIds: [60, 56] },
-            { title: "Resource Hijacking (AML.T0029)", risk: "HIGH", tactic: "Impact", desc: "Cryptomining via AI compute.", steps: ["Monitor GPU", "Cost Analysis"], linkedActionIds: [115, 91] },
-            { title: "External Harms (AML.T0032)", risk: "HIGH", tactic: "Impact", desc: "AI generating harmful content/advice.", steps: ["Content Filters", "Groundedness Check"], linkedActionIds: [32, 38] },
-
-            // --- DISCOVERY & COLLECTION ---
-            { title: "Discover ML Model Family (AML.T0012)", risk: "LOW", tactic: "Discovery", desc: "Inferring model architecture via errors.", steps: ["Sanitize Errors", "API Gateway"], linkedActionIds: [37, 24] },
-            { title: "ML Artifact Collection (AML.T0038)", risk: "HIGH", tactic: "Collection", desc: "Stealing datasets or logs.", steps: ["Audit Logs", "Encryption"], linkedActionIds: [20, 16] },
-
-            // --- AGENTIC & FINANCIAL SPECIFIC ---
-            { title: "Rogue Agent Ops", risk: "CRITICAL", tactic: "Agentic", desc: "Unauthorized agent contracts.", steps: ["Guardrails", "Workload ID"], linkedActionIds: [51, 4] },
-            { title: "Recursive Poisoning", risk: "HIGH", tactic: "Agentic", desc: "Corrupted data loops.", steps: ["Disable Loops", "Data Lineage"], linkedActionIds: [108, 15] },
-            { title: "Black Box Decision", risk: "HIGH", tactic: "Financial", desc: "Unexplainable credit denial.", steps: ["Explainability", "Bias Check"], linkedActionIds: [96, 95] },
-            { title: "Shadow AI Sprawl", risk: "HIGH", tactic: "Discovery", desc: "Unmanaged AI usage.", steps: ["Discovery", "Blocking"], linkedActionIds: [104, 10] },
-            { title: "Lack of Oversight", risk: "HIGH", tactic: "Compliance", desc: "No human-in-the-loop.", steps: ["Human Oversight", "Process"], linkedActionIds: [53, 46] }
+        let threatScenarios = [
+            {
+                title: "LLM Jailbreak (AML.T0051)",
+                risk: "CRITICAL",
+                desc: "Attacker inputs a crafted prompt to bypass filters.",
+                steps: ["Enable Shields", "System Messages"],
+                linkedActionIds: [31, 32]
+            },
+            {
+                title: "Model Inversion (AML.T0040)",
+                risk: "HIGH",
+                desc: "Reconstructing training data (PII) from outputs.",
+                steps: ["Differential Privacy", "Access Control"],
+                linkedActionIds: [14, 7]
+            },
+            {
+                title: "Supply Chain Backdoor (AML.T0018)",
+                risk: "CRITICAL",
+                desc: "NEW: Attacker poisons a model with a hidden trigger/backdoor (e.g., pickle file injection).",
+                steps: ["Scan Model Artifacts", "Verify Signatures"],
+                linkedActionIds: [101, 105]
+            },
+            {
+                title: "Resource Hijacking (AML.T0029)",
+                risk: "HIGH",
+                desc: "NEW: Compromising AI compute environments for illicit cryptomining.",
+                steps: ["Monitor GPU Usage", "Restrict Outbound"],
+                linkedActionIds: [103, 77]
+            },
+            {
+                title: "Evading ML Detectors (AML.T0015)",
+                risk: "HIGH",
+                desc: "NEW: Crafting adversarial examples to bypass fraud/malware detection.",
+                steps: ["Adversarial Training", "Drift Monitoring"],
+                linkedActionIds: [102, 100]
+            },
+            {
+                title: "LLM-Gen Phishing (AML.T0054)",
+                risk: "HIGH",
+                desc: "NEW: Internal user utilizing GenAI to create high-quality spear-phishing content.",
+                steps: ["Content Filtering", "Insider Risk Policy"],
+                linkedActionIds: [32, 72]
+            },
+            {
+                title: "Discovery of ML Artifacts (AML.T0000)",
+                risk: "MEDIUM",
+                desc: "NEW: Attacker searches open technical databases for models containing secrets.",
+                steps: ["Restrict Repos", "Scan for Secrets"],
+                linkedActionIds: [104, 101]
+            },
+            {
+                title: "Rogue Agent Ops",
+                risk: "CRITICAL",
+                desc: "Autonomous agent negotiating unauthorized contracts.",
+                steps: ["Guardrails", "Workload ID"],
+                linkedActionIds: [51, 4]
+            },
+            {
+                title: "Data Exfiltration (AML.T0057)",
+                risk: "HIGH",
+                desc: "Attacker steals data via model inference.",
+                steps: ["Edge DLP", "Labels"],
+                linkedActionIds: [11, 13, 61]
+            },
+            {
+                title: "Prompt Injection (Indirect)",
+                risk: "HIGH",
+                desc: "Attack embedded in web page consumed by LLM.",
+                steps: ["Human-in-the-loop", "Content Filtering"],
+                linkedActionIds: [31, 37]
+            },
+            {
+                title: "Model Theft (AML.T0043)",
+                risk: "HIGH",
+                desc: "Attacker steals model weights/parameters.",
+                steps: ["Private Endpoints", "Role-Based Access"],
+                linkedActionIds: [21, 22]
+            },
+            {
+                title: "Bias Violation",
+                risk: "HIGH",
+                desc: "System discriminates against protected groups.",
+                steps: ["Fairness Assessment", "Bias Mitigation"],
+                linkedActionIds: [95, 32]
+            },
+            {
+                title: "Credential Theft (SDK)",
+                risk: "HIGH",
+                desc: "Attacker steals static secrets used by SDKs.",
+                steps: ["Secret Rotation", "Managed Identity"],
+                linkedActionIds: [62, 9]
+            }
         ];
 
         // --- GLOBAL STATE ---
-        let selectedModuleIndex = 0;
         let currentRole = 'All';
-        let currentTacticFilter = 'All';
+        let selectedModuleIndex = 0;
+        let currentScoreFilter = 'all';
 
         // --- INITIALIZATION ---
         document.addEventListener('DOMContentLoaded', () => {
             renderModuleList();
             loadModuleDetail(0);
-            renderTacticFilters();
-            renderThreatGrid('All');
+            renderThreatGrid();
             renderScoreFilters();
             renderSecureScore('all');
         });
@@ -495,44 +523,17 @@
 
             const rlist = document.getElementById('detail-references'); rlist.innerHTML = '';
             m.references.forEach(r => {
-                let icon = "📄";
-                if (r.title.includes("Video") || r.title.includes("Mechanics")) icon = "🎥";
-                if (r.title.includes("GitHub") || r.title.includes("SDK") || r.title.includes("Tool")) icon = "💻";
-                rlist.innerHTML += `<a href="${r.url}" target="_blank" class="block p-3 rounded bg-slate-50 border border-slate-200 hover:border-indigo-400 transition-colors"><div class="font-bold text-sm"><span class="res-icon">${icon}</span>${r.title}</div><div class="text-[10px] text-slate-400 truncate pl-5">${r.url}</div></a>`;
+                rlist.innerHTML += `<a href="${r.url}" target="_blank" class="block p-3 rounded bg-slate-50 border border-slate-200 hover:border-indigo-400 transition-colors"><div class="font-bold text-sm">${r.title}</div><div class="text-[10px] text-slate-400 truncate">${r.url}</div></a>`;
             });
         }
 
         // --- THREAT MATRIX ---
-        function renderTacticFilters() {
-            const tactics = new Set();
-            threatScenarios.forEach(t => tactics.add(t.tactic));
-            const container = document.getElementById('tactic-filters');
-            container.innerHTML = `<button onclick="filterTactics('All')" class="tactic-btn active">All</button>`;
-            Array.from(tactics).sort().forEach(t => {
-                container.innerHTML += `<button onclick="filterTactics('${t}')" class="tactic-btn">${t}</button>`;
-            });
-        }
-
-        function filterTactics(tactic) {
-            currentTacticFilter = tactic;
-            renderThreatGrid(tactic);
-            document.querySelectorAll('.tactic-btn').forEach(b => {
-                b.className = b.innerText === tactic ? "tactic-btn active" : "tactic-btn";
-            });
-        }
-
-        function renderThreatGrid(filter = 'All') {
-            const grid = document.getElementById('threat-grid');
-            grid.innerHTML = '';
-            const filtered = threatScenarios.map((t, i) => ({ ...t, idx: i })).filter(t => filter === 'All' || t.tactic === filter);
-
-            filtered.forEach((t) => {
+        function renderThreatGrid() {
+            const grid = document.getElementById('threat-grid'); grid.innerHTML = '';
+            threatScenarios.forEach((t, i) => {
                 grid.innerHTML += `
-                    <div onclick="expandScenario(${t.idx})" class="p-6 bg-white border border-slate-200 rounded-xl cursor-pointer hover:shadow-md relative overflow-hidden transition-all">
-                        <div class="flex justify-between items-start mb-2">
-                            <span class="mitre-badge">${t.tactic}</span>
-                            <div class="px-2 py-1 text-[10px] font-bold bg-red-100 text-red-600 rounded">${t.risk}</div>
-                        </div>
+                    <div onclick="expandScenario(${i})" class="p-6 bg-white border border-slate-200 rounded-xl cursor-pointer hover:shadow-md relative overflow-hidden transition-all">
+                        <div class="absolute top-0 right-0 px-2 py-1 text-[10px] font-bold bg-red-100 text-red-600">${t.risk}</div>
                         <h3 class="font-bold text-slate-800 mb-2 mt-2">${t.title}</h3>
                         <p class="text-xs text-slate-500 mb-4 line-clamp-2">${t.desc}</p>
                         <span class="text-indigo-600 text-xs font-bold">View Protocol &rarr;</span>
@@ -546,26 +547,23 @@
             document.getElementById('scen-title').innerText = t.title;
             document.getElementById('scen-risk').innerText = t.risk;
             document.getElementById('scen-desc').innerText = t.desc;
-            document.getElementById('scen-badge').innerText = t.tactic;
             const sl = document.getElementById('scen-steps'); sl.innerHTML = '';
             t.steps.forEach(s => sl.innerHTML += `<li>${s}</li>`);
 
             const al = document.getElementById('linked-actions-list'); al.innerHTML = '';
-            if (t.linkedActionIds) {
-                t.linkedActionIds.forEach(id => {
-                    const action = secureScoreItems.find(x => x.id === id);
-                    if (action) {
-                        al.innerHTML += `
-                            <div class="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-700 cursor-pointer hover:bg-slate-800 transition-colors" onclick="goToAction(${action.id})">
-                                <div class="flex items-center gap-2">
-                                    <span class="text-[10px] text-slate-200 font-bold">${action.title}</span>
-                                </div>
-                                <span class="text-[10px] text-indigo-400 font-bold hover:underline">View Details &rarr;</span>
+            t.linkedActionIds.forEach(id => {
+                const action = secureScoreItems.find(x => x.id === id);
+                if (action) {
+                    al.innerHTML += `
+                        <div class="flex items-center justify-between p-2 rounded bg-slate-900 border border-slate-700 cursor-pointer hover:bg-slate-800 transition-colors" onclick="goToAction(${action.id})">
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] text-slate-200 font-bold">${action.title}</span>
                             </div>
-                        `;
-                    }
-                });
-            }
+                            <span class="text-[10px] text-indigo-400 font-bold hover:underline">View Details &rarr;</span>
+                        </div>
+                    `;
+                }
+            });
             document.getElementById('scenario-detail').classList.remove('hidden');
             document.getElementById('scenario-detail').scrollIntoView({ behavior: 'smooth' });
         }
@@ -585,14 +583,11 @@
             const list = document.getElementById('remediation-list'); list.innerHTML = '';
             secureScoreItems.filter(i => filter === 'all' || i.category.includes(filter)).forEach((i) => {
                 const div = document.createElement('div');
-                div.id = `action-card-${i.id}`;
+                div.id = `action-card-${i.id}`; // Assign unique ID for linking
                 div.className = "flex flex-col justify-between p-4 bg-slate-50 border border-slate-200 rounded-lg hover:shadow-sm transition-all duration-500";
                 div.innerHTML = `
                     <div class="mb-2">
-                        <div class="text-sm font-bold text-slate-800 flex items-center gap-2">
-                            ${i.title}
-                            ${i.category === 'Insider Risk' || i.category === 'AI-SPM' || i.category === 'Supply Chain' ? '<span class="badge-new">NEW</span>' : ''}
-                        </div>
+                        <div class="text-sm font-bold text-slate-800">${i.title}</div>
                         <div class="text-[10px] text-slate-500 mt-1 font-medium">${i.category} • Impact: ${i.impact} pts</div>
                     </div>
                     <button onclick="goToModule(${i.moduleId})" class="self-end text-[10px] px-3 py-1 border border-indigo-200 text-indigo-600 rounded font-bold hover:bg-indigo-50">Go to Training &rarr;</button>
@@ -603,7 +598,7 @@
 
         function goToAction(id) {
             switchView('frameworks');
-            filterScore('all');
+            filterScore('all'); // Ensure item is visible
             setTimeout(() => {
                 const el = document.getElementById(`action-card-${id}`);
                 if (el) {
@@ -626,7 +621,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderModuleList();
             loadModuleDetail(0);
-            renderTacticFilters();
             renderThreatGrid();
             renderScoreFilters();
             renderSecureScore('all');
