@@ -53,17 +53,19 @@
         }
 
         .highlight-action {
-            animation: highlightPulse 2s ease-out;
+            animation: highlightPulse 2.5s ease-out;
+            border-color: #6366f1;
+            background-color: #eef2ff;
         }
 
         @keyframes highlightPulse {
             0% {
-                background-color: #e0e7ff;
-                box-shadow: 0 0 0 2px #6366f1;
+                transform: scale(1.02);
+                box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.3);
             }
 
             100% {
-                background-color: #ffffff;
+                transform: scale(1);
                 box-shadow: none;
             }
         }
@@ -79,6 +81,17 @@
             font-weight: bold;
         }
 
+        .mitre-badge {
+            background-color: #f1f5f9;
+            color: #475569;
+            font-size: 0.65rem;
+            padding: 1px 5px;
+            border-radius: 3px;
+            border: 1px solid #cbd5e1;
+            font-family: monospace;
+            text-transform: uppercase;
+        }
+
         .tactic-btn {
             font-size: 0.7rem;
             padding: 4px 8px;
@@ -89,6 +102,7 @@
             transition: all 0.2s;
             text-transform: uppercase;
             font-family: monospace;
+            cursor: pointer;
         }
 
         .tactic-btn:hover {
@@ -102,7 +116,6 @@
             border-color: #4f46e5;
         }
 
-        /* Type Icon Styles */
         .res-icon {
             display: inline-block;
             width: 16px;
@@ -162,11 +175,7 @@
                 <div class="flex flex-col md:flex-row justify-between items-start gap-6">
                     <div>
                         <h2 class="text-2xl font-bold text-slate-900">Training Modules</h2>
-                        <p class="text-slate-600">linkedin.com/in/MustAI - Prerelease - Comprehensive 200-hour Learning
-                            Path covering Zero
-                            Trust,
-                            NIST AI RMF, and
-                            MITRE ATLAS.</p>
+                        <p class="text-slate-600">Comprehensive 195-hour guide. Mapped to MITRE ATLAS Tactics.</p>
                     </div>
 
                     <div class="flex flex-col items-end gap-3">
@@ -239,8 +248,7 @@
         <section id="view-scenarios" class="hidden-section fade-in">
             <div class="mb-8 text-center max-w-6xl mx-auto">
                 <h2 class="text-2xl font-bold text-slate-900">MITRE ATLAS Threat Matrix</h2>
-                <p class="text-slate-600 mt-2">Comprehensive coverage of Adversarial Tactics. Filter by Tactic below.
-                </p>
+                <p class="text-slate-600 mt-2">Adversarial Threat Landscape for Artificial-Intelligence Systems.</p>
                 <div id="tactic-filters" class="mt-4 flex flex-wrap justify-center gap-2">
                     <!-- Filters injected by JS -->
                 </div>
@@ -270,8 +278,7 @@
                         <div class="bg-slate-700/50 rounded-lg p-4 border border-slate-600">
                             <h4 class="text-emerald-400 font-bold uppercase text-xs tracking-wider mb-4">Recommended
                                 Remediation Actions</h4>
-                            <p class="text-xs text-slate-400 mb-3">Click an action below to view details in the library.
-                            </p>
+                            <p class="text-xs text-slate-400 mb-3">Click an action below to jump to the details.</p>
                             <div id="linked-actions-list" class="space-y-2">
                                 <!-- Injected via JS -->
                             </div>
@@ -298,7 +305,7 @@
                 </div>
 
                 <div class="overflow-y-auto max-h-[70vh] pr-2">
-                    <div id="remediation-list" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div id="remediation-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
                         <!-- Items injected by JS -->
                     </div>
                 </div>
@@ -308,7 +315,7 @@
 
     <!-- JS LOGIC -->
     <script>
-        // --- CONSTANT DATA ---
+        // --- DATA STORE ---
         const curriculumData = [
             {
                 id: 1, title: "Module 1: Identity & Zero Trust", hours: "15 Hours", roles: ["Architect", "Engineer", "CISO", "SOC"], tools: ["Entra ID", "PIM", "Workload ID"], desc: "Foundation: Verify Explicitly. Secure identities accessing AI.", scenarios: ["Enforce MFA", "Conditional Access", "Workload Identity"],
@@ -322,7 +329,7 @@
                 ]
             },
             {
-                id: 2, title: "Module 2: Data Security (NIST)", hours: "20 Hours", roles: ["Architect", "GRC", "CISO"], tools: ["Microsoft Purview", "Defender"], desc: "Map & Measure data flows to prevent leakage in RAG and Shadow AI.", scenarios: ["Define Labels", "DLP for AI", "DSPM Scanning"],
+                id: 2, title: "Module 2: Data Security (NIST)", hours: "20 Hours", roles: ["Architect", "GRC", "CISO"], tools: ["Microsoft Purview", "Defender"], desc: "Map & Measure data flows to prevent leakage in RAG.", scenarios: ["Define Labels", "DLP for AI", "DSPM Scanning"],
                 references: [
                     { title: "[Foundation] Purview for AI Hub", url: "https://learn.microsoft.com/en-us/purview/ai-microsoft-purview" },
                     { title: "[Guide] Defender DSPM", url: "https://learn.microsoft.com/en-us/azure/defender-for-cloud/concept-data-security-posture-management" },
@@ -331,12 +338,12 @@
                 ]
             },
             { id: 3, title: "Module 3: Network Infrastructure", hours: "15 Hours", roles: ["Architect", "Engineer"], tools: ["Azure Network", "Private Link"], desc: "MITRE T0029 Defense. Segment AI resources.", scenarios: ["Private Endpoints", "Disable Public Access"], references: [{ title: "[Guide] Private Link for AI", url: "https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/configure-private-link" }, { title: "[Implementation] Azure Firewall for AI", url: "https://learn.microsoft.com/en-us/azure/firewall/overview" }] },
-            { id: 4, title: "Module 4: App Safety (OWASP)", hours: "20 Hours", roles: ["Engineer", "SOC", "Architect"], tools: ["Azure AI Content Safety", "Gateway"], desc: "Mitigate AML.T0051 (Jailbreak) and T0054 (Data Poisoning).", scenarios: ["Prompt Shields", "Rate Limiting", "Configure Content Filters"], references: [{ title: "[Foundation] Azure AI Content Safety", url: "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview" }, { title: "[Deep Dive] Prompt Engineering Guide", url: "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering" }] },
-            { id: 5, title: "Module 5: Copilot Governance", hours: "10 Hours", roles: ["GRC", "Architect"], tools: ["Copilot Studio", "Power Platform"], desc: "Plugin Security and Supply Chain.", scenarios: ["Scan Plugins", "Configure DLP"], references: [{ title: "[Foundation] Securing Copilot Studio", url: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance" }] },
-            { id: 6, title: "Module 6: Threat Hunting", hours: "15 Hours", roles: ["SOC", "CISO"], tools: ["Sentinel", "Copilot for Security"], desc: "Detecting AML.T0040 (Model Inversion) and T0043 (Theft).", scenarios: ["Enable Connector", "Hunt Anomalies"], references: [{ title: "[Foundation] Sentinel AI Workload Protection", url: "https://learn.microsoft.com/en-us/azure/defender-for-cloud/ai-threat-protection" }] },
+            { id: 4, title: "Module 4: App Safety (OWASP)", hours: "20 Hours", roles: ["Engineer", "SOC", "Architect"], tools: ["Azure AI Content Safety"], desc: "Mitigate AML.T0051 (Jailbreak).", scenarios: ["Prompt Shields", "Rate Limiting"], references: [{ title: "[Foundation] Azure AI Content Safety", url: "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview" }, { title: "[Deep Dive] Prompt Engineering Guide", url: "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering" }] },
+            { id: 5, title: "Module 5: Copilot Governance", hours: "10 Hours", roles: ["GRC", "Architect"], tools: ["Copilot Studio"], desc: "Plugin Security and Supply Chain.", scenarios: ["Scan Plugins", "Configure DLP"], references: [{ title: "[Foundation] Securing Copilot Studio", url: "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance" }] },
+            { id: 6, title: "Module 6: Threat Hunting", hours: "15 Hours", roles: ["SOC", "CISO"], tools: ["Sentinel", "Copilot for Security"], desc: "Detecting AML.T0040 (Model Inversion).", scenarios: ["Enable Connector", "Hunt Anomalies"], references: [{ title: "[Foundation] Sentinel AI Workload Protection", url: "https://learn.microsoft.com/en-us/azure/defender-for-cloud/ai-threat-protection" }] },
             { id: 7, title: "Module 7: Agentic AI Security", hours: "10 Hours", roles: ["Architect", "Engineer"], tools: ["Agent365"], desc: "Securing autonomous agents.", scenarios: ["Spending Limits", "Access Scope"], references: [{ title: "[Deep Dive] Autonomous Agent Authentication", url: "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview" }] },
-            { id: 8, title: "Module 8: GRC - NIST & EU Act", hours: "15 Hours", roles: ["GRC", "CISO"], tools: ["Purview Compliance Manager"], desc: "EU Act transparency obligations.", scenarios: ["Red Teaming", "Human Oversight"], references: [{ title: "[Guide] Compliance Manager", url: "https://learn.microsoft.com/en-us/purview/compliance-manager" }] },
-            { id: 9, title: "Module 9: ISO 42001 (AIMS)", hours: "15 Hours", roles: ["GRC", "Architect"], tools: ["Purview", "Azure Policy"], desc: "Establishing an AI Management System.", scenarios: ["Publish Policy", "Map Inventory"], references: [{ title: "[Foundation] Azure Policy for AI", url: "https://learn.microsoft.com/en-us/azure/governance/policy/overview" }] },
+            { id: 8, title: "Module 8: GRC - NIST & EU Act", hours: "15 Hours", roles: ["GRC", "CISO"], tools: ["Purview Compliance Manager"], desc: "EU Act transparency obligations.", scenarios: ["Red Teaming", "Human Oversight"], references: [{ title: "[Foundation] Azure AI Red Teaming", url: "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/red-teaming" }] },
+            { id: 9, title: "Module 9: ISO 42001 (AIMS)", hours: "15 Hours", roles: ["GRC", "CISO", "Architect"], tools: ["Purview", "Azure Policy"], desc: "Establishing an AI Management System.", scenarios: ["Publish Policy", "Map Inventory"], references: [{ title: "[Foundation] Azure Policy for AI", url: "https://learn.microsoft.com/en-us/azure/governance/policy/overview" }] },
             { id: 10, title: "Module 10: Financial AI", hours: "15 Hours", roles: ["GRC", "Architect"], tools: ["Azure AI Foundry"], desc: "DORAICT Third-Party Compliance.", scenarios: ["Fairness Reports", "Resilience Plan"], references: [{ title: "[Foundation] Responsible AI Dashboard", url: "https://learn.microsoft.com/en-us/azure/machine-learning/concept-responsible-ai-dashboard" }] },
             { id: 11, title: "Module 11: Endpoints & SDKs", hours: "15 Hours", roles: ["Engineer", "SOC"], tools: ["Edge", "SDKs"], desc: "Edge for Business AI Policies.", scenarios: ["Edge Sidebar Policy", "SDK Secret Rotation"], references: [{ title: "[Foundation] Edge AI Policies", url: "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies#ai-settings" }] },
             { id: 12, title: "Module 12: Adversarial ML & Red Teaming", hours: "15 Hours", roles: ["Engineer", "SOC", "CISO"], tools: ["PyRIT", "Counterfit"], desc: "NEW: Automated Red Teaming for Generative AI (MITRE ATLAS).", scenarios: ["Automated Jailbreaking", "Model Enumeration", "Backdoor Discovery"], references: [{ title: "[GitHub] PyRIT", url: "https://github.com/Azure/PyRIT" }, { title: "[GitHub] Counterfit", url: "https://github.com/Azure/counterfit" }] },
@@ -366,27 +373,37 @@
             { id: 113, title: "Establish AI Kill Switch", category: "EU Act", impact: 5, moduleId: 7 },
             { id: 114, title: "Review AI Vendor SBOMs", category: "Supply Chain", impact: 4, moduleId: 4 },
             { id: 115, title: "Limit GPU Compute Quotas", category: "MITRE", impact: 3, moduleId: 2 },
-            // Truncated list for brevity, includes all from previous
             { id: 65, title: "Restrict Guest Access to AI", category: "Zero Trust", impact: 3, moduleId: 0 },
             { id: 66, title: "Enable Access Reviews", category: "Zero Trust", impact: 3, moduleId: 0 },
-            { id: 89, title: "Enable Sentinel Connector", category: "MITRE", impact: 5, moduleId: 5 }
+            { id: 89, title: "Enable Sentinel Connector", category: "MITRE", impact: 5, moduleId: 5 },
+            { id: 94, title: "Enforce Human-in-the-Loop", category: "EU Act", impact: 5, moduleId: 6 },
+            { id: 95, title: "Generate Fairness Reports", category: "Financial", impact: 5, moduleId: 9 },
+            // NEW Items for ATLAS Coverage
+            { id: 116, title: "Scan for AI Secrets (Repos)", category: "MITRE", impact: 5, moduleId: 13 },
+            { id: 117, title: "Restrict ML Artifact Downloads", category: "MITRE", impact: 4, moduleId: 3 },
+            { id: 118, title: "Enable Immutable Storage (Backup)", category: "NIST", impact: 4, moduleId: 1 },
+            { id: 119, title: "Monitor Cost Anomalies", category: "MITRE", impact: 3, moduleId: 5 },
+            { id: 120, title: "Filter Output for PII", category: "NIST", impact: 5, moduleId: 3 }
         ];
 
         const threatScenarios = [
             // --- RECONNAISSANCE ---
-            { title: "Search Open Tech Databases (AML.T0004)", risk: "MEDIUM", tactic: "Reconnaissance", desc: "Adversary searches public repositories for exposed model info or keys.", steps: ["Restrict Public Access", "Secret Scanning"], linkedActionIds: [106, 107] },
-            { title: "Acquire Public ML Artifacts (AML.T0002)", risk: "MEDIUM", tactic: "Reconnaissance", desc: "Adversary downloads public models to find vulnerabilities.", steps: ["Model Inventory", "Vulnerability Scanning"], linkedActionIds: [104, 105] },
+            { title: "Search Open Tech Databases (AML.T0004)", risk: "MEDIUM", tactic: "Reconnaissance", desc: "Adversary searches public repositories for exposed model info or keys.", steps: ["Restrict Public Access", "Secret Scanning"], linkedActionIds: [116, 107] },
+            { title: "Acquire Public ML Artifacts (AML.T0002)", risk: "MEDIUM", tactic: "Reconnaissance", desc: "Adversary downloads public models to find vulnerabilities.", steps: ["Model Inventory", "Vulnerability Scanning"], linkedActionIds: [104, 117] },
             { title: "Active Scanning (AML.T0003)", risk: "LOW", tactic: "Reconnaissance", desc: "Scanning for open ports/services on AI infrastructure.", steps: ["Disable Public Network Access", "WAF"], linkedActionIds: [22, 24] },
+            { title: "Gather Victim ML Data (AML.T0000)", risk: "MEDIUM", tactic: "Reconnaissance", desc: "Harvesting data about target's ML systems.", steps: ["Disable Public Access", "Metadata Scrubbing"], linkedActionIds: [22, 40] },
 
             // --- RESOURCE DEVELOPMENT ---
-            { title: "Poison Training Data (AML.T0020)", risk: "HIGH", tactic: "Resource Dev", desc: "Adversary modifies training data to introduce backdoors.", steps: ["Data Checksums", "Immutable Storage"], linkedActionIds: [110, 69] },
+            { title: "Poison Training Data (AML.T0020)", risk: "HIGH", tactic: "Resource Dev", desc: "Adversary modifies training data to introduce backdoors.", steps: ["Data Checksums", "Immutable Storage"], linkedActionIds: [110, 118] },
             { title: "Establish Accounts (AML.T0016)", risk: "HIGH", tactic: "Resource Dev", desc: "Adversary creates accounts to interact with models.", steps: ["MFA Enforcement", "Identity Protection"], linkedActionIds: [1, 3] },
-            { title: "Publish Poisoned Datasets (AML.T0019)", risk: "HIGH", tactic: "Resource Dev", desc: "Attacker seeds public datasets with malicious data.", steps: ["Data Provenance", "Vendor Assessment"], linkedActionIds: [114, 59] },
+            { title: "Publish Poisoned Datasets (AML.T0019)", risk: "HIGH", tactic: "Resource Dev", desc: "Attacker seeds public datasets with malicious data.", steps: ["Data Provenance", "Vendor Assessment"], linkedActionIds: [114, 99] },
+            { title: "Acquire Infrastructure (AML.T0017)", risk: "MEDIUM", tactic: "Resource Dev", desc: "Renting GPUs or cloud compute for attacks.", steps: ["Quota Management", "Cost Monitoring"], linkedActionIds: [115, 119] },
 
             // --- INITIAL ACCESS ---
             { title: "Valid Accounts (AML.T0006)", risk: "CRITICAL", tactic: "Initial Access", desc: "Compromising cloud accounts to access AI services.", steps: ["Conditional Access", "PIM"], linkedActionIds: [4, 5] },
             { title: "Supply Chain Compromise (AML.T0010)", risk: "HIGH", tactic: "Initial Access", desc: "Malicious 3rd party plugin/model used in Copilot.", steps: ["Model Signing", "Plugin Scanning"], linkedActionIds: [41, 114] },
             { title: "Exploit Public Facing App (AML.T0008)", risk: "HIGH", tactic: "Initial Access", desc: "Exploiting vulnerabilities in AI web frontends.", steps: ["WAF", "Patch Management"], linkedActionIds: [24, 76] },
+            { title: "Phishing (AML.T00XX)", risk: "HIGH", tactic: "Initial Access", desc: "Spearphishing AI admins.", steps: ["Phishing-Resistant MFA", "User Training"], linkedActionIds: [1, 66] },
 
             // --- EXECUTION ---
             { title: "LLM Jailbreak (AML.T0051)", risk: "CRITICAL", tactic: "Execution", desc: "Attacker inputs a crafted prompt to bypass filters.", steps: ["Enable Shields", "System Messages"], linkedActionIds: [31, 32] },
@@ -394,40 +411,43 @@
             { title: "LLM-Gen Phishing (AML.T0054)", risk: "HIGH", tactic: "Execution", desc: "Using AI to generate high-quality phishing emails.", steps: ["Content Filtering", "Insider Risk"], linkedActionIds: [32, 103] },
 
             // --- PERSISTENCE ---
-            { title: "Poison Model (AML.T0018)", risk: "CRITICAL", tactic: "Persistence", desc: "Backdooring a model file.", steps: ["Model Signing", "Scan Artifacts"], linkedActionIds: [105, 104] },
-            { title: "Backdoor ML Model (AML.T0018)", risk: "CRITICAL", tactic: "Persistence", desc: "Embedding hidden triggers in model weights.", steps: ["Adversarial Training", "Red Teaming"], linkedActionIds: [105, 8] },
+            { title: "Poison Model (AML.T0018)", risk: "CRITICAL", tactic: "Persistence", desc: "Backdooring a model file.", steps: ["Model Signing", "Scan Artifacts"], linkedActionIds: [114, 104] },
+            { title: "Backdoor ML Model (AML.T0018)", risk: "CRITICAL", tactic: "Persistence", desc: "Embedding hidden triggers in model weights.", steps: ["Adversarial Training", "Red Teaming"], linkedActionIds: [111, 8] },
 
             // --- EVASION ---
-            { title: "Evade ML Model (AML.T0015)", risk: "HIGH", tactic: "Evasion", desc: "Adversarial examples to bypass detection.", steps: ["Adversarial Training", "Drift Monitoring"], linkedActionIds: [111, 100] },
+            { title: "Evade ML Model (AML.T0015)", risk: "HIGH", tactic: "Evasion", desc: "Crafting inputs to evade ML-based detection systems.", steps: ["Adversarial Training", "Drift Monitoring"], linkedActionIds: [111, 100] },
             { title: "Impair Process Control (AML.T0035)", risk: "MEDIUM", tactic: "Evasion", desc: "Manipulating AI operational parameters.", steps: ["RBAC", "Access Reviews"], linkedActionIds: [8, 66] },
+            { title: "Cost Harvesting (AML.T00XX)", risk: "MEDIUM", tactic: "Evasion", desc: "Draining budget to force service downgrade.", steps: ["Cost Alerts", "Rate Limits"], linkedActionIds: [119, 33] },
 
             // --- EXFILTRATION ---
-            { title: "Model Inversion (AML.T0040)", risk: "HIGH", tactic: "Exfiltration", desc: "Reconstructing PII from outputs.", steps: ["Differential Privacy", "Output Filtering"], linkedActionIds: [14, 37] },
+            { title: "Model Inversion (AML.T0040)", risk: "HIGH", tactic: "Exfiltration", desc: "Reconstructing PII from outputs.", steps: ["Differential Privacy", "Output Filtering"], linkedActionIds: [14, 120] },
             { title: "Model Theft (AML.T0043)", risk: "HIGH", tactic: "Exfiltration", desc: "Stealing model weights.", steps: ["Private Endpoints", "Role-Based Access"], linkedActionIds: [21, 65] },
             { title: "Data Exfiltration (AML.T0057)", risk: "HIGH", tactic: "Exfiltration", desc: "Stealing data via inference.", steps: ["DLP", "Egress Control"], linkedActionIds: [13, 25] },
             { title: "LLM Side-Channel (AML.T0052)", risk: "MEDIUM", tactic: "Exfiltration", desc: "Gleaning info via token consumption timing.", steps: ["Constant Time Ops", "Rate Limiting"], linkedActionIds: [33, 48] },
 
             // --- IMPACT ---
             { title: "Denial of ML Service (AML.T0029)", risk: "MEDIUM", tactic: "Impact", desc: "Resource exhaustion.", steps: ["Rate Limiting", "Quotas"], linkedActionIds: [33, 115] },
-            { title: "Erode Integrity (AML.T0031)", risk: "HIGH", tactic: "Impact", desc: "Degrading model performance.", steps: ["Drift Detection", "Versioning"], linkedActionIds: [60, 56] },
-            { title: "Resource Hijacking (AML.T0029)", risk: "HIGH", tactic: "Impact", desc: "Cryptomining via AI compute.", steps: ["Monitor GPU", "Cost Analysis"], linkedActionIds: [115, 91] },
+            { title: "Erode Integrity (AML.T0031)", risk: "HIGH", tactic: "Impact", desc: "Degrading model performance.", steps: ["Drift Detection", "Versioning"], linkedActionIds: [100, 56] },
+            { title: "Resource Hijacking (AML.T0029)", risk: "HIGH", tactic: "Impact", desc: "Cryptomining via AI compute.", steps: ["Monitor GPU", "Cost Analysis"], linkedActionIds: [115, 119] },
             { title: "External Harms (AML.T0032)", risk: "HIGH", tactic: "Impact", desc: "AI generating harmful content/advice.", steps: ["Content Filters", "Groundedness Check"], linkedActionIds: [32, 38] },
+            { title: "Spamming (AML.T00XX)", risk: "MEDIUM", tactic: "Impact", desc: "Using AI to generate mass spam.", steps: ["Rate Limiting", "Reputation Filter"], linkedActionIds: [33, 76] },
 
             // --- DISCOVERY & COLLECTION ---
             { title: "Discover ML Model Family (AML.T0012)", risk: "LOW", tactic: "Discovery", desc: "Inferring model architecture via errors.", steps: ["Sanitize Errors", "API Gateway"], linkedActionIds: [37, 24] },
             { title: "ML Artifact Collection (AML.T0038)", risk: "HIGH", tactic: "Collection", desc: "Stealing datasets or logs.", steps: ["Audit Logs", "Encryption"], linkedActionIds: [20, 16] },
+            { title: "Discover Data Sources (AML.T00XX)", risk: "MEDIUM", tactic: "Discovery", desc: "Mapping training data locations.", steps: ["Access Logs", "Least Privilege"], linkedActionIds: [20, 7] },
 
             // --- AGENTIC & FINANCIAL SPECIFIC ---
             { title: "Rogue Agent Ops", risk: "CRITICAL", tactic: "Agentic", desc: "Unauthorized agent contracts.", steps: ["Guardrails", "Workload ID"], linkedActionIds: [51, 4] },
             { title: "Recursive Poisoning", risk: "HIGH", tactic: "Agentic", desc: "Corrupted data loops.", steps: ["Disable Loops", "Data Lineage"], linkedActionIds: [108, 15] },
             { title: "Black Box Decision", risk: "HIGH", tactic: "Financial", desc: "Unexplainable credit denial.", steps: ["Explainability", "Bias Check"], linkedActionIds: [96, 95] },
             { title: "Shadow AI Sprawl", risk: "HIGH", tactic: "Discovery", desc: "Unmanaged AI usage.", steps: ["Discovery", "Blocking"], linkedActionIds: [104, 10] },
-            { title: "Lack of Oversight", risk: "HIGH", tactic: "Compliance", desc: "No human-in-the-loop.", steps: ["Human Oversight", "Process"], linkedActionIds: [53, 46] }
+            { title: "Lack of Oversight", risk: "HIGH", tactic: "Compliance", desc: "No human-in-the-loop.", steps: ["Human Oversight", "Process"], linkedActionIds: [94, 46] }
         ];
 
         // --- GLOBAL STATE ---
-        let selectedModuleIndex = 0;
         let currentRole = 'All';
+        let selectedModuleIndex = 0;
         let currentTacticFilter = 'All';
 
         // --- INITIALIZATION ---
