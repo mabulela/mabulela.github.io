@@ -1,0 +1,2151 @@
+{
+    "curriculumData": [
+        {
+            "id": 1,
+            "title": "Module 1: AI Governance, Risk, and Compliance (GRC)",
+            "hours": "45 Hours",
+            "roles": [
+                "GRC",
+                "CISO",
+                "Architect"
+            ],
+            "tools": [
+                "Purview Compliance Manager",
+                "Purview",
+                "Azure Policy",
+                "Azure AI Foundry"
+            ],
+            "desc": "This module establishes foundational AI policies and maps risk frameworks (such as NIST, EU AI Act, and ISO 42001) to manage financial and third-party compliance. As a learner, you will discover how to operationalize practical governance, protecting sensitive enterprise information using Microsoft Purview. By the end of this module, expect to be able to design comprehensive AI security governance models across Azure workloads and enforce robust data protection strategies to meet regulatory demands.",
+            "scenarios": [
+                "Red Teaming",
+                "Human Oversight",
+                "Publish Policy",
+                "Map Inventory",
+                "Fairness Reports",
+                "Resilience Plan"
+            ],
+            "references": [
+                {
+                    "title": "[Foundation] Azure Policy for AI",
+                    "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
+                },
+                {
+                    "title": "[Foundation] Responsible AI Dashboard",
+                    "url": "https://learn.microsoft.com/en-us/azure/machine-learning/concept-responsible-ai-dashboard"
+                },
+                {
+                    "title": "[Guide] Compliance Manager",
+                    "url": "https://learn.microsoft.com/en-us/purview/compliance-manager"
+                },
+                {
+                    "title": "[MS Learn] Security monitoring and governance",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/security-monitoring-and-governance/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Describe the data governance solutions of Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/describe-purview-data-governance/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[Path] Govern and protect sensitive information in the age of AI",
+                    "url": "https://learn.microsoft.com/en-us/training/paths/purview-protect-govern-ai/"
+                },
+                {
+                    "title": "[Module] Understand how Microsoft Defender for Cloud supports AI security and governance in Azure",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/defender-for-cloud-ai-understand-protections/"
+                },
+                {
+                    "title": "[Video] Understand How Microsoft Purview Secures and Governs Your Entire Data Estate",
+                    "url": "https://www.youtube.com/watch?v=U5nAmJv_Cn4"
+                },
+                {
+                    "title": "[MS Learn] Understand how Microsoft Defender for Cloud supports AI security and governance in Azure",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/defender-for-cloud-ai-understand-protections/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Build an end to end data governance and master data management stack with Microsoft Purview and CluedIn",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/building-end-to-end-data-governance-master-data-stack-with-microsoft-purview-cluedin/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Explore AI governance for AI ready infrastructure",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/explore-ai-governance-ai-ready-infrastructure/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Run governed AI workloads with Microsoft Foundry",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/run-governed-ai-workloads-microsoft-foundry/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Manage compliance with Microsoft Purview for Microsoft 365 Copilot",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-data-compliance/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Design solutions for regulatory compliance",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/design-solutions-regulatory-compliance/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Explore compliance in Microsoft 365",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/explore-plan-compliance-microsoft-365/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Examine data governance solutions in Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/examine-data-governance-solutions-microsoft-purview/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Introduction to Microsoft's Responsible AI Approach",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-to-microsofts-responsible-ai-approach/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Apply governance controls to AI-ready workloads",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/apply-governance-controls-ai-ready-workloads/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Protect and govern AI ready infrastructure with Azure",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-ai-ready-infrastructure-azure/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Govern AI ready workloads with Microsoft Foundry",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/govern-ai-ready-workloads-microsoft-foundry/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Examine Defender for Cloud regulatory compliance standards",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/examine-defender-cloud-regulatory-compliance-standards/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Describe the data compliance solutions of Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/describe-purview-risk-compliance-governance/?WT.mc_id=api_CatalogApi"
+                }
+            ],
+            "garbage": []
+        },
+        {
+            "id": 2,
+            "title": "Module 2: AI Infrastructure & Zero Trust Identity",
+            "hours": "45 Hours",
+            "roles": [
+                "Architect",
+                "Engineer",
+                "CISO",
+                "SOC"
+            ],
+            "tools": [
+                "Entra ID",
+                "PIM",
+                "Workload ID",
+                "Azure Network",
+                "Private Link",
+                "Edge",
+                "SDKs"
+            ],
+            "desc": "In this module, you will learn to secure the underlying network, APIs, and identities (both human and machine) accessing the AI ecosystem through a strict Zero Trust lens. We will set expectations for designing robust security perimeters and architecting identity solutions specific to AI workloads using Microsoft Entra ID. Expect to master the deployment of conditional access, workload identities, private endpoints, and advanced threat protection to safeguard your AI infrastructure.",
+            "scenarios": [
+                "Enforce MFA",
+                "Conditional Access",
+                "Workload Identity",
+                "Private Endpoints",
+                "Disable Public Access",
+                "Edge Sidebar Policy",
+                "SDK Secret Rotation"
+            ],
+            "references": [
+                {
+                    "title": "[Foundation] Zero Trust for AI",
+                    "url": "https://learn.microsoft.com/en-us/security/zero-trust/zero-trust-for-ai"
+                },
+                {
+                    "title": "[Implementation] Securing Workload Identities",
+                    "url": "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview"
+                },
+                {
+                    "title": "[SDK] Microsoft Graph SDK",
+                    "url": "https://learn.microsoft.com/en-us/graph/sdks/sdks-overview"
+                },
+                {
+                    "title": "[SDK] MSAL for Developers",
+                    "url": "https://learn.microsoft.com/en-us/entra/identity-platform/msal-overview"
+                },
+                {
+                    "title": "[Guide] Private Link for AI",
+                    "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/configure-private-link"
+                },
+                {
+                    "title": "[Implementation] Azure Firewall for AI",
+                    "url": "https://learn.microsoft.com/en-us/azure/firewall/overview"
+                },
+                {
+                    "title": "[Foundation] Edge AI Policies",
+                    "url": "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies#ai-settings"
+                },
+                {
+                    "title": "[SDK] Python AI SDKs",
+                    "url": "https://learn.microsoft.com/en-us/python/api/overview/azure/ai-openai-readme"
+                },
+                {
+                    "title": "[Module] Understand identity architecture for AI workloads",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/entra-ai-understand/"
+                },
+                {
+                    "title": "[Path] Enhance endpoint security with Microsoft Intune and Microsoft Security Copilot",
+                    "url": "https://learn.microsoft.com/en-us/training/paths/enhance-endpoint-security-microsoft-intune-copilot/"
+                },
+                {
+                    "title": "[Video] Microsoft Entra: What's New in Secure Access on the AI Frontier | BRK243",
+                    "url": "https://www.youtube.com/watch?v=ptMM56u6Ay0"
+                },
+                {
+                    "title": "[Video] AI with Zero Trust Security",
+                    "url": "https://www.youtube.com/watch?v=OnlN-2Q5QsE"
+                },
+                {
+                    "title": "[Video] Microsoft Entra Agent ID explained",
+                    "url": "https://www.youtube.com/watch?v=N-B-kD28P2I"
+                },
+                {
+                    "title": "[MS Learn] Implement secure AI-ready infrastructure with Azure services",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/implement-secure-ai-ready-infrastructure-azure-services/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Secure SAP on Microsoft Cloud",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/secure-sap-microsoft-cloud/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Explore identity in Microsoft Entra ID",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/explore-identity-azure-active-directory/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Powerful security designed for AI",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/powerful-security-designed-for-ai/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Explore Microsoft 365 security foundations",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-security-foundations/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement identity-based security for Azure Machine Learning workspaces",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/implement-identity-based-security-azure-machine-learning/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement security controls for Azure AI-ready infrastructure",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/implement-security-controls-azure-ai-ready-infrastructure/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Manage secure AI-ready infrastructure",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/manage-secure-ai-ready-infrastructure/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Secure Microsoft Foundry environments",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/azure-ai-foundry-secure-environment/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Design solutions for securing applications",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/design-solutions-secure-applications/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Understand identity architecture for AI workloads",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/entra-ai-understand/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Manage security controls for identity and access",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/manage-security-controls-identity-access/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Manage Microsoft Entra application access",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/manage-application-access-microsoft-entra-id/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Describe the identity protection and governance capabilities of Microsoft Entra",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/describe-identity-protection-governance-capabilities/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Design AI Workloads on Azure",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/design-ai-workloads/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[Video] Microsoft Entra Agent ID explained",
+                    "url": "https://www.youtube.com/watch?v=N-B-kD28P2I"
+                },
+                {
+                    "title": "[Deep Dive] Autonomous Agent Authentication",
+                    "url": "https://learn.microsoft.com/en-us/entra/workload-id/workload-identities-overview"
+                }
+            ],
+            "garbage": []
+        },
+        {
+            "id": 3,
+            "title": "Module 3: AI Data Security & Information Protection",
+            "hours": "35 Hours",
+            "roles": [
+                "Architect",
+                "GRC",
+                "CISO",
+                "SOC"
+            ],
+            "tools": [
+                "Microsoft Purview",
+                "Defender",
+                "Purview IRM"
+            ],
+            "desc": "Discover how to classify and protect sensitive data flowing into AI and RAG applications while proactively detecting risky insider behaviors. This module broadens your expertise in data lifecycle management, focusing on securing AI interactions using Microsoft Purview. You will learn to mitigate AI-specific data security risks across enterprise and browser-based AI apps. Expect to gain hands-on knowledge in implementing sensitivity labels, DLP, and adaptive protection to secure your data estate.",
+            "scenarios": [
+                "Define Labels",
+                "Configure DLP",
+                "DLP for AI",
+                "DSPM Scanning",
+                "Adaptive Protection",
+                "Risky Prompt Detection"
+            ],
+            "references": [
+                {
+                    "title": "[Foundation] Purview for AI Hub",
+                    "url": "https://learn.microsoft.com/en-us/purview/ai-microsoft-purview"
+                },
+                {
+                    "title": "[Implementation] Sensitivity Labels",
+                    "url": "https://learn.microsoft.com/en-us/purview/sensitivity-labels"
+                },
+                {
+                    "title": "[SDK] Purview SDK for Python",
+                    "url": "https://learn.microsoft.com/en-us/python/api/overview/azure/purview-catalog-readme"
+                },
+                {
+                    "title": "[Foundation] Insider Risk Management",
+                    "url": "https://learn.microsoft.com/en-us/purview/insider-risk-management"
+                },
+                {
+                    "title": "[Guide] Adaptive Protection",
+                    "url": "https://learn.microsoft.com/en-us/purview/adaptive-protection"
+                },
+                {
+                    "title": "[Configuration] Risky Browser Usage Policies",
+                    "url": "https://learn.microsoft.com/en-us/purview/insider-risk-management-browser-support"
+                },
+                {
+                    "title": "[Path] Secure AI interactions and environments with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/paths/purview-protect-ai/"
+                },
+                {
+                    "title": "[Module] Identify and mitigate AI data security risks",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-identify-mitigate-ai-risks/"
+                },
+                {
+                    "title": "[Module] Secure Enterprise and Browser-based AI Apps with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/"
+                },
+                {
+                    "title": "[Video] Beyond Visibility: Microsoft Purview Data Security Posture Management | BRK253",
+                    "url": "https://www.youtube.com/watch?v=MqNgGkXJ5bc"
+                },
+                {
+                    "title": "[MS Learn] Understand data security posture management in Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-security-posture-management-understand/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Understand Microsoft Purview Insider Risk Management",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-explore-insider-risk-management/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Understand How to Secure AI Data with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-understand-risks/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Secure developer AI environments with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Investigate and respond to Microsoft Purview Data Loss Prevention alerts",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-data-loss-prevention-alerts/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Prepare for Microsoft Purview Insider Risk Management",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-prepare-insider-risk-management/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Secure enterprise and browser-based AI apps with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-enterprise-other/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Manage AI data security challenges with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-data-security/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Prevent data loss with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-prevent-data-loss/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Secure AI in schools with Microsoft Security",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/secure-ai-schools-microsoft-security/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement and manage Microsoft Purview Privacy Risk Management",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/priva-privacy-risk-management/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Describe the data security solutions of Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/describe-purview-data-solutions/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Create and configure sensitivity labels with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-protect-information/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement Microsoft Purview Insider Risk Management",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/implement-insider-risk-management/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement retention, eDiscovery, and Communication compliance in Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-exercise-implement-retention-ediscovery-communication-compliance/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement information protection and data loss prevention with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-exercise-information-protection-data-loss-prevention/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Introduction to information security and compliance in Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-information-governance/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement endpoint data loss prevention (DLP) with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-implement-endpoint-dlp/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement Microsoft Purview Data Loss Prevention",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/implement-data-loss-prevention-policies-microsoft-365/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Explore Microsoft Purview Data Loss Prevention",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/explore-examine-data-loss-prevention-microsoft-365/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement Adaptive Protection in Insider Risk Management",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/m365-compliance-irm-adaptive-protection/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Explore sensitivity labels",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/explore-sensitivity-labels-microsoft-365/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Protect and govern Microsoft 365 data",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/protect-govern-data-microsoft-365/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[Module] Secure developer AI environments with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-developer-apps/"
+                }
+            ],
+            "garbage": []
+        },
+        {
+            "id": 4,
+            "title": "Module 4: AI App Safety, Copilot & Agentic Guardrails",
+            "hours": "40 Hours",
+            "roles": [
+                "Engineer",
+                "SOC",
+                "Architect",
+                "GRC"
+            ],
+            "tools": [
+                "Azure AI Content Safety",
+                "Gateway",
+                "Copilot Studio",
+                "Power Platform",
+                "Agent365"
+            ],
+            "desc": "This module focuses on securing the application layer against prompt injections, safeguarding agentic logic, and governing Copilot plugin supply chains. You will cover the essential fundamentals of AI app security required to safely support Microsoft 365 Copilot and Enterprise Agentic AI. Expect to learn how to deploy prompt shields, configure content filters, apply strict access scopes, and utilize Azure AI Content Safety and Microsoft Foundry to ensure safe enterprise AI deployments.",
+            "scenarios": [
+                "Prompt Shields",
+                "Rate Limiting",
+                "Configure Content Filters",
+                "Scan Plugins",
+                "Spending Limits",
+                "Access Scope"
+            ],
+            "references": [
+                {
+                    "title": "[Foundation] Azure AI Content Safety",
+                    "url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview"
+                },
+                {
+                    "title": "[Deep Dive] Prompt Engineering Guide",
+                    "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/prompt-engineering"
+                },
+                {
+                    "title": "[Foundation] Securing Copilot Studio",
+                    "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/security-and-governance"
+                },
+                {
+                    "title": "[Path] Prepare security and compliance to support Microsoft 365 Copilot",
+                    "url": "https://learn.microsoft.com/en-us/training/paths/prepare-security-compliance-support-microsoft-365-copilot/"
+                },
+                {
+                    "title": "[Path] Manage Microsoft 365 Copilot administration",
+                    "url": "https://learn.microsoft.com/en-us/training/paths/manage-microsoft-365-copilot-administration/"
+                },
+                {
+                    "title": "[Video] Connected managed and complete agentic apps with Microsoft Foundry | BRK113",
+                    "url": "https://www.youtube.com/watch?v=ThGXQlnS8Lo"
+                },
+                {
+                    "title": "[Video] Safe and scalable DevOps with AI agents on GitHub | BRK107",
+                    "url": "https://www.youtube.com/watch?v=16_x7e0d_SY"
+                },
+                {
+                    "title": "[Video] Building agents with Copilot Studio and Microsoft Foundry | BRK314",
+                    "url": "https://www.youtube.com/watch?v=tGbcQZ4WeZ0"
+                },
+                {
+                    "title": "[Video] Drive agent adoption with the M365 Copilot and the Agent Store | BRK311",
+                    "url": "https://www.youtube.com/watch?v=mT3OO7VT2n0"
+                },
+                {
+                    "title": "[Video] How Microsoft Agent 365 works",
+                    "url": "https://www.youtube.com/watch?v=yWwYLbMvc3s"
+                },
+                {
+                    "title": "[Video] Microsoft Foundry - AI app & agent factory",
+                    "url": "https://www.youtube.com/watch?v=C6rxEGJay70"
+                },
+                {
+                    "title": "[MS Learn] Secure Microsoft 365 Copilot interactions with Microsoft Purview",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/purview-ai-secure-copilot/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Responsible AI with GitHub Copilot",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-with-github-copilot/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Fundamentals of AI security",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/fundamentals-ai-security/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Secure Azure OpenAI with content safety controls",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/secure-azure-openai-content-safety-controls/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Unlock productivity with generative AI",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/generative-ai-productivity/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Microsoft 365 Copilot and Copilot agents",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/copilot-and-copilot-agents/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Examine data security and compliance in Microsoft 365 Copilot",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/examine-data-security-microsoft-365-copilot/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Build and manage an agent",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/build-manage-no-code-copilot-agent-sharepoint/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Explore Microsoft 365 Copilot and agents",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/explore-microsoft-365-copilot-agents/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Manage Microsoft 365 Copilot",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/manage-microsoft-365-copilot/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Introduction to Microsoft 365 Copilot",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-microsoft-365-copilot/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Introduction to agentic AI business solutions",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-agentic-ai-business-solution-architecture/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Measure and mitigate risks for a generative AI app in Azure AI Foundry",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/measure-mitigate-risks-azure-ai-studio/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Use AI responsibly with Microsoft Foundry Content Safety",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-content-safety/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement generative AI guardrails with Azure AI Content Safety",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/moderate-content-detect-harm-azure-ai-content-safety/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] (AI-900) Get started with generative AI and agents in Microsoft Foundry",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-generative-ai-azure/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Configure and manage guardrails in Microsoft Foundry",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/azure-ai-foundry-configure-manage-guardrails/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement a responsible generative AI solution in Microsoft Foundry",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/responsible-ai-studio/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement generative AI guardrails in Azure AI Foundry",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/moderate-content-detect-harm-azure-ai-content-safety-studio/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[Video] Nasdaq Boardvantage: AI-driven governance on PostgreSQL and Microsoft Foundry | BRK137",
+                    "url": "https://www.youtube.com/watch?v=BkOcPQntsk4"
+                },
+                {
+                    "title": "[MS Learn] Evaluate generative AI performance in Microsoft Foundry portal",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/evaluate-models-azure-ai-studio/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] (AI-900) Get started with Microsoft Foundry",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/get-started-ai-in-foundry/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Architect scalable and cost-efficient AI agent solutions on Azure",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/architect-scalable-ai-agent-solutions/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Apply principles of Zero Trust to Microsoft Copilots",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/apply-principles-zero-trust-microsoft-copilot/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[Module] Fundamentals of AI security",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/fundamentals-ai-security/"
+                }
+            ],
+            "garbage": []
+        },
+        {
+            "id": 5,
+            "title": "Module 5: AI Posture Management & Threat Defense",
+            "hours": "45 Hours",
+            "roles": [
+                "SOC",
+                "CISO",
+                "Engineer",
+                "Architect"
+            ],
+            "tools": [
+                "Sentinel",
+                "Copilot for Security",
+                "PyRIT",
+                "Counterfit",
+                "Defender for Cloud"
+            ],
+            "desc": "Continuously discover Shadow AI, hunt for active threats, and automate adversarial machine learning testing. This comprehensive module deepens your understanding of AI security vulnerabilities and essential controls. You will learn to actively protect AI workloads using Microsoft Defender for Cloud and enhance security operations with Microsoft Security Copilot. Expect to develop advanced skills in red teaming, anomaly detection, and implementing automated defenses against emerging AI-specific cyber threats.",
+            "scenarios": [
+                "Enable Connector",
+                "Hunt Anomalies",
+                "Automated Jailbreaking",
+                "Model Enumeration",
+                "Backdoor Discovery",
+                "Shadow AI Discovery",
+                "Model Vuln Scanning"
+            ],
+            "references": [
+                {
+                    "title": "[Foundation] Sentinel AI Workload Protection",
+                    "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/ai-threat-protection"
+                },
+                {
+                    "title": "[Tool] PyRIT (Python Risk Identification Tool)",
+                    "url": "https://github.com/Azure/PyRIT"
+                },
+                {
+                    "title": "[Guide] Azure AI Red Teaming",
+                    "url": "https://learn.microsoft.com/en-us/azure/ai-services/openai/concepts/red-teaming"
+                },
+                {
+                    "title": "[Foundation] AI-SPM Overview",
+                    "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/ai-security-posture-management"
+                },
+                {
+                    "title": "[Guide] Attack Path Analysis for AI",
+                    "url": "https://learn.microsoft.com/en-us/azure/defender-for-cloud/attack-path-analysis"
+                },
+                {
+                    "title": "[Module] AI Security Controls",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/ai-security-controls/"
+                },
+                {
+                    "title": "[Module] Protect AI workloads with Microsoft Defender for Cloud",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/defender-for-cloud-ai-protect-workloads/"
+                },
+                {
+                    "title": "[Path] Mitigate threats using Microsoft Security Copilot",
+                    "url": "https://learn.microsoft.com/en-us/training/paths/sc-200-mitigate-threats-using-microsoft-copilot-for-security/"
+                },
+                {
+                    "title": "[Path] Enhance security operations by using Microsoft Security Copilot",
+                    "url": "https://learn.microsoft.com/en-us/training/paths/security-copilot-and-ai/"
+                },
+                {
+                    "title": "[MS Learn] Unlock Insights with Microsoft Security Copilot",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/unlock-insights-microsoft-copilot-security/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Protect AI workloads with Microsoft Defender for Cloud",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/defender-for-cloud-ai-protect-workloads/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Configure and manage threat protection by using Microsoft Defender for Cloud",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/microsoft-defender-cloud-threat-protection/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Microsoft Security Copilot in Education",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/security-copilot-edu/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Manage security posture by using Microsoft Defender for Cloud",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/microsoft-defender-cloud-security-posture/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Manage Microsoft Defender for Cloud Apps",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/manage-microsoft-defender-cloud-apps/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Implement threat protection by using Microsoft Defender for Office 365",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/implement-threat-protection-use-microsoft-defender-office-365/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] Introduction to AI security testing",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/introduction-ai-security-testing/?WT.mc_id=api_CatalogApi"
+                },
+                {
+                    "title": "[MS Learn] AI security controls",
+                    "url": "https://learn.microsoft.com/en-us/training/modules/ai-security-controls/?WT.mc_id=api_CatalogApi"
+                }
+            ],
+            "garbage": []
+        }
+    ],
+    "secureScoreItems": [
+        {
+            "id": 1,
+            "title": "Enforce Phishing-Resistant MFA",
+            "category": "Zero Trust",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 2,
+            "title": "Block Legacy Auth",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 3,
+            "title": "Enable Identity Protection",
+            "category": "Zero Trust",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 4,
+            "title": "Workload Identity Conditional Access",
+            "category": "Zero Trust",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 5,
+            "title": "Enforce JIT Access (PIM)",
+            "category": "Zero Trust",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 6,
+            "title": "Audit Credential Expiry",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 7,
+            "title": "Restrict Guest Access to AI",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 8,
+            "title": "Enable Access Reviews",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 9,
+            "title": "Use Managed Identities",
+            "category": "Zero Trust",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 10,
+            "title": "Disable User Consent for Apps",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 11,
+            "title": "Configure Sensitivity Labels",
+            "category": "NIST",
+            "impact": 5,
+            "moduleId": 2
+        },
+        {
+            "id": 12,
+            "title": "Enable Default Labeling",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 2
+        },
+        {
+            "id": 13,
+            "title": "Block Data Leak (DLP)",
+            "category": "NIST",
+            "impact": 5,
+            "moduleId": 2
+        },
+        {
+            "id": 14,
+            "title": "Enable Endpoint DLP",
+            "category": "NIST",
+            "impact": 4,
+            "moduleId": 2
+        },
+        {
+            "id": 15,
+            "title": "Scan AI Data Stores (DSPM)",
+            "category": "NIST",
+            "impact": 4,
+            "moduleId": 2
+        },
+        {
+            "id": 16,
+            "title": "Encrypt Training Data",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 2
+        },
+        {
+            "id": 17,
+            "title": "Implement Data Retention",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 2
+        },
+        {
+            "id": 18,
+            "title": "Configure Insider Risk",
+            "category": "MITRE",
+            "impact": 4,
+            "moduleId": 2
+        },
+        {
+            "id": 19,
+            "title": "Restrict SharePoint Sharing",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 2
+        },
+        {
+            "id": 20,
+            "title": "Audit Data Access Logs",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 2
+        },
+        {
+            "id": 21,
+            "title": "Enable Private Endpoints",
+            "category": "MITRE",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 22,
+            "title": "Disable Public Access",
+            "category": "MITRE",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 23,
+            "title": "Configure VNET Endpoints",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 24,
+            "title": "Enable WAF",
+            "category": "OWASP",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 25,
+            "title": "Restrict Outbound Traffic",
+            "category": "MITRE",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 26,
+            "title": "Enable DDoS Protection",
+            "category": "MITRE",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 27,
+            "title": "Implement TLS 1.2+",
+            "category": "OWASP",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 28,
+            "title": "Rotate API Keys",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 29,
+            "title": "Monitor Bandwidth",
+            "category": "MITRE",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 30,
+            "title": "Isolate Training Envs",
+            "category": "ISO 42001",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 31,
+            "title": "Deploy Prompt Shields",
+            "category": "OWASP",
+            "impact": 5,
+            "moduleId": 3
+        },
+        {
+            "id": 32,
+            "title": "Enable Content Filters",
+            "category": "EU Act",
+            "impact": 5,
+            "moduleId": 3
+        },
+        {
+            "id": 33,
+            "title": "Implement Rate Limiting",
+            "category": "OWASP",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 34,
+            "title": "Configure Hate Blocklist",
+            "category": "EU Act",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 35,
+            "title": "Enable Protected Material",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 36,
+            "title": "Validate System Messages",
+            "category": "OWASP",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 37,
+            "title": "Sanitize Inputs/Outputs",
+            "category": "OWASP",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 38,
+            "title": "Check for Groundedness",
+            "category": "Financial",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 39,
+            "title": "Log All User Prompts",
+            "category": "EU Act",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 40,
+            "title": "Disclose AI Identity",
+            "category": "EU Act",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 41,
+            "title": "Inventory AI Plugins",
+            "category": "ISO 42001",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 42,
+            "title": "Scan 3rd Party Connectors",
+            "category": "MITRE",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 43,
+            "title": "Restrict High-Risk Connectors",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 44,
+            "title": "Enforce Publisher Verification",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 45,
+            "title": "Publish Usage Guidelines",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 0
+        },
+        {
+            "id": 46,
+            "title": "Enable Sentinel Connector",
+            "category": "MITRE",
+            "impact": 5,
+            "moduleId": 4
+        },
+        {
+            "id": 47,
+            "title": "Config Diagnostic Settings",
+            "category": "NIST",
+            "impact": 4,
+            "moduleId": 4
+        },
+        {
+            "id": 48,
+            "title": "Monitor Token Spikes",
+            "category": "MITRE",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 49,
+            "title": "Hunt Anomalous APIs",
+            "category": "MITRE",
+            "impact": 4,
+            "moduleId": 4
+        },
+        {
+            "id": 50,
+            "title": "Enable Threat Intel",
+            "category": "MITRE",
+            "impact": 3,
+            "moduleId": 4
+        },
+        {
+            "id": 51,
+            "title": "Set Agent Spending Limits",
+            "category": "Financial",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 52,
+            "title": "Limit Agent Depth",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 53,
+            "title": "Enforce Human-in-the-Loop",
+            "category": "EU Act",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 54,
+            "title": "Generate Fairness Reports",
+            "category": "Financial",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 55,
+            "title": "Document Explainability",
+            "category": "Financial",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 56,
+            "title": "Test AI Resilience",
+            "category": "Financial",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 57,
+            "title": "Register High-Risk Systems",
+            "category": "EU Act",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 58,
+            "title": "Establish Risk Register",
+            "category": "ISO 42001",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 59,
+            "title": "Supplier Risk Assessment",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 60,
+            "title": "Monitor Model Drift",
+            "category": "Financial",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 61,
+            "title": "Enforce Edge Sidebar Policy",
+            "category": "Zero Trust",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 62,
+            "title": "Rotate SDK Secrets",
+            "category": "Zero Trust",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 63,
+            "title": "Restrict Edge Extensions",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 64,
+            "title": "Enable Edge DLP",
+            "category": "NIST",
+            "impact": 5,
+            "moduleId": 2
+        },
+        {
+            "id": 65,
+            "title": "Restrict Guest Access to AI",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 66,
+            "title": "Enable Access Reviews",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 67,
+            "title": "Use Managed Identities",
+            "category": "Zero Trust",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 68,
+            "title": "Disable User Consent for Apps",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 69,
+            "title": "Scan AI Data Stores (DSPM)",
+            "category": "NIST",
+            "impact": 4,
+            "moduleId": 2
+        },
+        {
+            "id": 70,
+            "title": "Encrypt Training Data (CMK)",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 2
+        },
+        {
+            "id": 71,
+            "title": "Implement Data Retention",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 2
+        },
+        {
+            "id": 72,
+            "title": "Configure Insider Risk",
+            "category": "MITRE",
+            "impact": 4,
+            "moduleId": 2
+        },
+        {
+            "id": 73,
+            "title": "Restrict SharePoint Sharing",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 2
+        },
+        {
+            "id": 74,
+            "title": "Disable Public Access (CogSvcs)",
+            "category": "MITRE",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 75,
+            "title": "Configure VNET Service Endpoints",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 76,
+            "title": "Enable WAF",
+            "category": "OWASP",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 77,
+            "title": "Restrict Outbound Traffic",
+            "category": "MITRE",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 78,
+            "title": "Enable DDoS Protection",
+            "category": "MITRE",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 79,
+            "title": "Implement TLS 1.2+",
+            "category": "OWASP",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 80,
+            "title": "Rotate API Keys (90d)",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 81,
+            "title": "Implement Rate Limiting",
+            "category": "OWASP",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 82,
+            "title": "Configure Hate Speech Blocklist",
+            "category": "EU Act",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 83,
+            "title": "Enable Protected Material Detection",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 2
+        },
+        {
+            "id": 84,
+            "title": "Validate System Messages",
+            "category": "OWASP",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 85,
+            "title": "Sanitize Inputs/Outputs",
+            "category": "OWASP",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 86,
+            "title": "Scan 3rd Party Connectors",
+            "category": "MITRE",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 87,
+            "title": "Restrict High-Risk Connectors",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 88,
+            "title": "Enforce Publisher Verification",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 89,
+            "title": "Enable Sentinel Connector",
+            "category": "MITRE",
+            "impact": 5,
+            "moduleId": 4
+        },
+        {
+            "id": 90,
+            "title": "Config Audit Logs",
+            "category": "NIST",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 91,
+            "title": "Monitor Token Spikes",
+            "category": "MITRE",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 92,
+            "title": "Enable Threat Intel",
+            "category": "MITRE",
+            "impact": 3,
+            "moduleId": 4
+        },
+        {
+            "id": 93,
+            "title": "Limit Agent Depth",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 94,
+            "title": "Enforce Human-in-the-Loop",
+            "category": "EU Act",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 95,
+            "title": "Generate Fairness Reports",
+            "category": "Financial",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 96,
+            "title": "Document Explainability",
+            "category": "Financial",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 97,
+            "title": "Test AI Resilience",
+            "category": "Financial",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 98,
+            "title": "Establish Risk Register",
+            "category": "ISO 42001",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 99,
+            "title": "Supplier Risk Assessment",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 100,
+            "title": "Monitor Model Drift",
+            "category": "Financial",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 101,
+            "title": "Config Adaptive Protection",
+            "category": "Insider Risk",
+            "impact": 5,
+            "moduleId": 2
+        },
+        {
+            "id": 102,
+            "title": "Enable IRM Analytics",
+            "category": "Insider Risk",
+            "impact": 4,
+            "moduleId": 2
+        },
+        {
+            "id": 103,
+            "title": "AI Data Exfil Policy",
+            "category": "Insider Risk",
+            "impact": 5,
+            "moduleId": 2
+        },
+        {
+            "id": 104,
+            "title": "Inventory AI Assets",
+            "category": "AI-SPM",
+            "impact": 5,
+            "moduleId": 3
+        },
+        {
+            "id": 105,
+            "title": "Remediate Vulnerabilities",
+            "category": "AI-SPM",
+            "impact": 5,
+            "moduleId": 3
+        },
+        {
+            "id": 106,
+            "title": "Scan Secrets in Code",
+            "category": "AI-SPM",
+            "impact": 4,
+            "moduleId": 4
+        },
+        {
+            "id": 107,
+            "title": "Restrict Public Repos",
+            "category": "Supply Chain",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 108,
+            "title": "Disable LLM Loops",
+            "category": "MITRE",
+            "impact": 3,
+            "moduleId": 3
+        },
+        {
+            "id": 109,
+            "title": "Harden MLflow",
+            "category": "MITRE",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 110,
+            "title": "Verify Data Checksums",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 2
+        },
+        {
+            "id": 111,
+            "title": "Monitor Adversarial Access",
+            "category": "MITRE",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 112,
+            "title": "Isolate Jupyter Notebooks",
+            "category": "Zero Trust",
+            "impact": 3,
+            "moduleId": 2
+        },
+        {
+            "id": 113,
+            "title": "AI Kill Switch",
+            "category": "EU Act",
+            "impact": 5,
+            "moduleId": 1
+        },
+        {
+            "id": 114,
+            "title": "Review Vendor SBOM",
+            "category": "Supply Chain",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 115,
+            "title": "Limit GPU Quotas",
+            "category": "MITRE",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 116,
+            "title": "Define AI Roles & Resps",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 117,
+            "title": "Conduct AI Impact Assess",
+            "category": "NIST",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 118,
+            "title": "AI Change Management",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 119,
+            "title": "Decommissioning Process",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 120,
+            "title": "Continuous Monitoring Plan",
+            "category": "ISO 42001",
+            "impact": 4,
+            "moduleId": 1
+        },
+        {
+            "id": 121,
+            "title": "Legal Review of Output",
+            "category": "EU Act",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 122,
+            "title": "Stakeholder Comms Plan",
+            "category": "NIST",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 123,
+            "title": "AI Training for Staff",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 124,
+            "title": "Incident Response Playbook",
+            "category": "NIST",
+            "impact": 4,
+            "moduleId": 4
+        },
+        {
+            "id": 125,
+            "title": "AI System Registration",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 1
+        },
+        {
+            "id": 201,
+            "title": "Label Training Data",
+            "category": "DSPM",
+            "impact": 4,
+            "moduleId": 2
+        },
+        {
+            "id": 202,
+            "title": "Discover Shadow AI Apps",
+            "category": "DSPM",
+            "impact": 5,
+            "moduleId": 3
+        },
+        {
+            "id": 203,
+            "title": "Block Personal GenAI",
+            "category": "DSPM",
+            "impact": 4,
+            "moduleId": 2
+        },
+        {
+            "id": 301,
+            "title": "Custom Safety Filters",
+            "category": "App Safety",
+            "impact": 4,
+            "moduleId": 3
+        },
+        {
+            "id": 401,
+            "title": "Approve Plugin List",
+            "category": "ISO 42001",
+            "impact": 3,
+            "moduleId": 3
+        }
+    ],
+    "threatScenarios": [
+        {
+            "title": "Search Open Databases (AML.T0004)",
+            "risk": "MEDIUM",
+            "tactic": "Reconnaissance",
+            "desc": "Searching public repos for keys.",
+            "steps": [
+                "Secret Scanning"
+            ],
+            "linkedActionIds": [
+                106,
+                107
+            ]
+        },
+        {
+            "title": "Acquire Public Artifacts (AML.T0002)",
+            "risk": "MEDIUM",
+            "tactic": "Reconnaissance",
+            "desc": "Downloading compromised models.",
+            "steps": [
+                "Scan Artifacts"
+            ],
+            "linkedActionIds": [
+                104,
+                42
+            ]
+        },
+        {
+            "title": "Active Scanning (AML.T0003)",
+            "risk": "LOW",
+            "tactic": "Reconnaissance",
+            "desc": "Scanning exposed ports.",
+            "steps": [
+                "Disable Public"
+            ],
+            "linkedActionIds": [
+                22,
+                24
+            ]
+        },
+        {
+            "title": "Gather Victim ML Data (AML.T0000)",
+            "risk": "LOW",
+            "tactic": "Reconnaissance",
+            "desc": "Profiling victim's AI stack.",
+            "steps": [
+                "Limit Disclosure"
+            ],
+            "linkedActionIds": [
+                22,
+                2
+            ]
+        },
+        {
+            "title": "Poison Training Data (AML.T0020)",
+            "risk": "HIGH",
+            "tactic": "Resource Dev",
+            "desc": "Modifying data.",
+            "steps": [
+                "Checksums"
+            ],
+            "linkedActionIds": [
+                110,
+                69
+            ]
+        },
+        {
+            "title": "Establish Accounts (AML.T0016)",
+            "risk": "MEDIUM",
+            "tactic": "Resource Dev",
+            "desc": "Creating accounts for abuse.",
+            "steps": [
+                "Identity Protection"
+            ],
+            "linkedActionIds": [
+                3,
+                8
+            ]
+        },
+        {
+            "title": "Publish Poisoned Datasets (AML.T0019)",
+            "risk": "HIGH",
+            "tactic": "Resource Dev",
+            "desc": "Uploading bad data.",
+            "steps": [
+                "Vendor Assess"
+            ],
+            "linkedActionIds": [
+                59,
+                114
+            ]
+        },
+        {
+            "title": "Acquire Infrastructure (AML.T0017)",
+            "risk": "MEDIUM",
+            "tactic": "Resource Dev",
+            "desc": "Renting compute.",
+            "steps": [
+                "Quotas"
+            ],
+            "linkedActionIds": [
+                115,
+                51
+            ]
+        },
+        {
+            "title": "Valid Accounts (AML.T0006)",
+            "risk": "CRITICAL",
+            "tactic": "Initial Access",
+            "desc": "Compromised accounts.",
+            "steps": [
+                "MFA",
+                "CA"
+            ],
+            "linkedActionIds": [
+                1,
+                4
+            ]
+        },
+        {
+            "title": "Supply Chain Comp (AML.T0010)",
+            "risk": "HIGH",
+            "tactic": "Initial Access",
+            "desc": "Malicious plugin.",
+            "steps": [
+                "Scan Plugins"
+            ],
+            "linkedActionIds": [
+                41,
+                114
+            ]
+        },
+        {
+            "title": "Exploit Public App (AML.T0008)",
+            "risk": "HIGH",
+            "tactic": "Initial Access",
+            "desc": "Web exploit.",
+            "steps": [
+                "WAF"
+            ],
+            "linkedActionIds": [
+                24,
+                76
+            ]
+        },
+        {
+            "title": "Phishing (AML.T00XX)",
+            "risk": "HIGH",
+            "tactic": "Initial Access",
+            "desc": "Phishing admins.",
+            "steps": [
+                "MFA"
+            ],
+            "linkedActionIds": [
+                1,
+                3
+            ]
+        },
+        {
+            "title": "Prompt Injection (Indirect)",
+            "risk": "HIGH",
+            "tactic": "Initial Access",
+            "desc": "Attack embedded in web page consumed by LLM.",
+            "steps": [
+                "Human-in-the-loop",
+                "Content Filtering"
+            ],
+            "linkedActionIds": [
+                31,
+                37
+            ]
+        },
+        {
+            "title": "LLM Jailbreak (AML.T0051)",
+            "risk": "CRITICAL",
+            "tactic": "Execution",
+            "desc": "Prompt injection.",
+            "steps": [
+                "Shields"
+            ],
+            "linkedActionIds": [
+                31,
+                32
+            ]
+        },
+        {
+            "title": "LLM-Gen Phishing (AML.T0054)",
+            "risk": "HIGH",
+            "tactic": "Execution",
+            "desc": "AI Phishing.",
+            "steps": [
+                "Content Filter"
+            ],
+            "linkedActionIds": [
+                32,
+                103
+            ]
+        },
+        {
+            "title": "User Execution (AML.T0053)",
+            "risk": "HIGH",
+            "tactic": "Execution",
+            "desc": "Trick user.",
+            "steps": [
+                "App Safety"
+            ],
+            "linkedActionIds": [
+                31,
+                36
+            ]
+        },
+        {
+            "title": "Malicious Insider",
+            "risk": "CRITICAL",
+            "tactic": "Execution",
+            "desc": "Insider threat.",
+            "steps": [
+                "Adaptive Protection"
+            ],
+            "linkedActionIds": [
+                101,
+                103
+            ]
+        },
+        {
+            "title": "Poison Model (AML.T0018)",
+            "risk": "CRITICAL",
+            "tactic": "Persistence",
+            "desc": "Backdoor model.",
+            "steps": [
+                "Signing"
+            ],
+            "linkedActionIds": [
+                105,
+                42
+            ]
+        },
+        {
+            "title": "Backdoor ML Model (AML.T0018)",
+            "risk": "CRITICAL",
+            "tactic": "Persistence",
+            "desc": "Embedding hidden triggers.",
+            "steps": [
+                "Adversarial Training"
+            ],
+            "linkedActionIds": [
+                105,
+                111
+            ]
+        },
+        {
+            "title": "Evade ML Model (AML.T0015)",
+            "risk": "HIGH",
+            "tactic": "Evasion",
+            "desc": "Adversarial input.",
+            "steps": [
+                "Drift Monitor"
+            ],
+            "linkedActionIds": [
+                60,
+                111
+            ]
+        },
+        {
+            "title": "Impair Process (AML.T0035)",
+            "risk": "MEDIUM",
+            "tactic": "Evasion",
+            "desc": "Stop logging.",
+            "steps": [
+                "RBAC"
+            ],
+            "linkedActionIds": [
+                6,
+                8
+            ]
+        },
+        {
+            "title": "Cost Harvesting",
+            "risk": "MEDIUM",
+            "tactic": "Evasion",
+            "desc": "Drain budget.",
+            "steps": [
+                "Limits"
+            ],
+            "linkedActionIds": [
+                51,
+                33
+            ]
+        },
+        {
+            "title": "Model Inversion (AML.T0040)",
+            "risk": "HIGH",
+            "tactic": "Exfiltration",
+            "desc": "Extracting PII.",
+            "steps": [
+                "Differential Privacy"
+            ],
+            "linkedActionIds": [
+                14,
+                7
+            ]
+        },
+        {
+            "title": "Data Exfiltration (AML.T0057)",
+            "risk": "HIGH",
+            "tactic": "Exfiltration",
+            "desc": "Stealing data.",
+            "steps": [
+                "DLP"
+            ],
+            "linkedActionIds": [
+                11,
+                13,
+                61
+            ]
+        },
+        {
+            "title": "Model Theft (AML.T0043)",
+            "risk": "HIGH",
+            "tactic": "Exfiltration",
+            "desc": "Stealing weights.",
+            "steps": [
+                "Private EP"
+            ],
+            "linkedActionIds": [
+                21,
+                65
+            ]
+        },
+        {
+            "title": "LLM Side-Channel (AML.T0052)",
+            "risk": "MEDIUM",
+            "tactic": "Exfiltration",
+            "desc": "Token timing.",
+            "steps": [
+                "Rate Limit"
+            ],
+            "linkedActionIds": [
+                33,
+                48
+            ]
+        },
+        {
+            "title": "Credential Theft (SDK)",
+            "risk": "HIGH",
+            "tactic": "Exfiltration",
+            "desc": "Attacker steals static secrets used by SDKs.",
+            "steps": [
+                "Secret Rotation",
+                "Managed Identity"
+            ],
+            "linkedActionIds": [
+                62,
+                9
+            ]
+        },
+        {
+            "title": "Denial of ML Service (AML.T0029)",
+            "risk": "MEDIUM",
+            "tactic": "Impact",
+            "desc": "Resource exhaustion.",
+            "steps": [
+                "Rate Limiting"
+            ],
+            "linkedActionIds": [
+                33
+            ]
+        },
+        {
+            "title": "Erode Integrity (AML.T0031)",
+            "risk": "HIGH",
+            "tactic": "Impact",
+            "desc": "Degrade model.",
+            "steps": [
+                "Drift"
+            ],
+            "linkedActionIds": [
+                60,
+                56
+            ]
+        },
+        {
+            "title": "Resource Hijack (AML.T0029)",
+            "risk": "HIGH",
+            "tactic": "Impact",
+            "desc": "Crypto mining.",
+            "steps": [
+                "Quotas"
+            ],
+            "linkedActionIds": [
+                115,
+                51
+            ]
+        },
+        {
+            "title": "External Harms (AML.T0032)",
+            "risk": "HIGH",
+            "tactic": "Impact",
+            "desc": "Hate speech.",
+            "steps": [
+                "Content Filter"
+            ],
+            "linkedActionIds": [
+                32,
+                34
+            ]
+        },
+        {
+            "title": "Spamming",
+            "risk": "MEDIUM",
+            "tactic": "Impact",
+            "desc": "Mass spam.",
+            "steps": [
+                "Rate Limit"
+            ],
+            "linkedActionIds": [
+                33
+            ]
+        },
+        {
+            "title": "Bias Violation",
+            "risk": "HIGH",
+            "tactic": "Impact",
+            "desc": "System discriminates against protected groups.",
+            "steps": [
+                "Fairness Assessment",
+                "Bias Mitigation"
+            ],
+            "linkedActionIds": [
+                95,
+                32
+            ]
+        },
+        {
+            "title": "Discover Model Family (AML.T0012)",
+            "risk": "LOW",
+            "tactic": "Discovery",
+            "desc": "Infer arch.",
+            "steps": [
+                "Sanitize"
+            ],
+            "linkedActionIds": [
+                37
+            ]
+        },
+        {
+            "title": "ML Artifact Collect (AML.T0038)",
+            "risk": "HIGH",
+            "tactic": "Collection",
+            "desc": "Stealing logs.",
+            "steps": [
+                "Audit"
+            ],
+            "linkedActionIds": [
+                20,
+                16
+            ]
+        },
+        {
+            "title": "Discover Data Sources",
+            "risk": "MEDIUM",
+            "tactic": "Discovery",
+            "desc": "Mapping data.",
+            "steps": [
+                "Least Priv"
+            ],
+            "linkedActionIds": [
+                7,
+                66
+            ]
+        },
+        {
+            "title": "Rogue Agent Ops",
+            "risk": "CRITICAL",
+            "tactic": "Agentic",
+            "desc": "Unauthorized contracts.",
+            "steps": [
+                "Guardrails"
+            ],
+            "linkedActionIds": [
+                51,
+                4
+            ]
+        },
+        {
+            "title": "Shadow AI Sprawl",
+            "risk": "HIGH",
+            "tactic": "Discovery",
+            "desc": "Unmanaged usage.",
+            "steps": [
+                "Discovery"
+            ],
+            "linkedActionIds": [
+                104,
+                10
+            ]
+        },
+        {
+            "title": "Recursive Poisoning",
+            "risk": "HIGH",
+            "tactic": "Agentic",
+            "desc": "Data loops.",
+            "steps": [
+                "Lineage"
+            ],
+            "linkedActionIds": [
+                15,
+                69
+            ]
+        },
+        {
+            "title": "Lack of AIMS Policy",
+            "risk": "MED",
+            "tactic": "Compliance",
+            "desc": "Org deploys AI without defined policy.",
+            "steps": [
+                "Policy Definition",
+                "Management Review"
+            ],
+            "linkedActionIds": [
+                98,
+                99
+            ]
+        }
+    ]
+}
