@@ -3,7 +3,7 @@
         {
             "id": 1,
             "title": "Module 1: AI Governance, Risk, and Compliance (GRC)",
-            "hours": "45 Hours",
+            "hours": "30 Hours",
             "roles": [
                 "GRC",
                 "CISO",
@@ -119,7 +119,7 @@
         {
             "id": 2,
             "title": "Module 2: AI Infrastructure & Zero Trust Identity",
-            "hours": "45 Hours",
+            "hours": "30 Hours",
             "roles": [
                 "Architect",
                 "Engineer",
@@ -436,7 +436,7 @@
         {
             "id": 4,
             "title": "Module 4: AI App Safety, Copilot & Agentic Guardrails",
-            "hours": "40 Hours",
+            "hours": "35 Hours",
             "roles": [
                 "Engineer",
                 "SOC",
@@ -610,7 +610,7 @@
         {
             "id": 5,
             "title": "Module 5: AI Posture Management & Threat Defense",
-            "hours": "45 Hours",
+            "hours": "30 Hours",
             "roles": [
                 "SOC",
                 "CISO",
